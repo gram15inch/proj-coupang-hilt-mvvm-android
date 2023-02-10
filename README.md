@@ -1,2 +1,2 @@
-# proj-coupang-hilt-mvvm-android
+# proj-coupangeats-hilt-mvvm-android
 
