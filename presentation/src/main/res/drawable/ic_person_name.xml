@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="20dp"
+    android:height="20dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+  <group>
+    <clip-path
+        android:pathData="M0,0h192v192h-192z"/>
+    <path
+        android:pathData="M97.5,124C132.56,124 161,95.52 161,60.4C161,25.29 132.56,-3 97.5,-3C62.44,-3 34,25.48 34,60.4C34,95.32 62.44,124 97.5,124ZM97.5,13.58C123.21,13.58 144.25,34.65 144.25,60.4C144.25,86.15 123.21,107.22 97.5,107.22C71.79,107.22 50.75,86.15 50.75,60.4C50.75,34.65 71.79,13.58 97.5,13.58Z"
+        android:fillColor="@color/sign_up_start_icon"/>
+    <path
+        android:pathData="M7.65,186.54H184.35C188.1,186.54 191.06,183.57 191.06,179.82C191.06,144.7 162.5,115.98 127.22,115.98H64.78C29.66,115.98 0.94,144.55 0.94,179.82C0.94,183.57 3.9,186.54 7.65,186.54ZM64.78,129.4H127.22C152.82,129.4 173.89,148.45 177.17,173.11H14.83C18.11,148.6 39.18,129.4 64.78,129.4Z"
+        android:fillColor="@color/sign_up_start_icon"/>
+  </group>
+</vector>

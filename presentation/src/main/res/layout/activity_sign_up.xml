@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.gram15inch.presentation.viewmodel.SignUpViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/sign_up_toolbar"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="1dp"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:titleTextAppearance="@style/Mycoupang.toolBar.title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/sign_up_float_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbarSize="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/login_horizontal_margin"
+                    android:layout_marginEnd="@dimen/login_horizontal_margin">
+
+                    <ImageView
+                        android:id="@+id/sign_up_logo_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="25dp"
+                        android:src="@drawable/lg_logo"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/sign_up_info_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/input_user_info_str"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sign_up_logo_img"
+                        app:layout_goneMarginTop="20dp" />
+
+                    <FrameLayout
+                        android:id="@+id/sign_up_id_container_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sign_up_info_txt">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/login_input_text_height"
+                            android:paddingBottom="1dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/bg_sign_up_edit" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/sign_up_id_et_layout"
+                            style="@style/MyCoupang.Widget.Material3.TextInputLayout.FilledBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:boxBackgroundColor="@android:color/transparent"
+                            app:startIconDrawable="@drawable/ic_mail">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/sign_up_id_et"
+                                style="@style/MyCoupang.SignUp.Widget.AppCompat.EditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/login_input_text_height"
+                                android:hint="@string/sign_up_hint_email_str"
+                                android:text="@={viewModel.email}"
+                                android:inputType="textEmailAddress"
+                                />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </FrameLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/sign_up_pw_container_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/et_margin_vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sign_up_id_container_layout">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/login_input_text_height"
+                            android:paddingBottom="1dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/bg_sign_up_edit"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/sign_up_pw_et_layout"
+                            style="@style/MyCoupang.Widget.Material3.TextInputLayout.FilledBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:startIconDrawable="@drawable/ic_lock"
+                            app:endIconTint="@android:color/transparent"
+                            app:endIconTintMode="src_atop"
+                            app:endIconMode="password_toggle"
+                            app:passwordToggleDrawable="@drawable/sc_sign_password_end"
+                            >
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                style="@style/MyCoupang.SignUp.Widget.AppCompat.EditText"
+                                android:id="@+id/sign_up_pw_et"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/login_input_text_height"
+                                android:hint="@string/sign_up_hint_pass_str"
+                                android:text="@={viewModel.password}"
+                                android:inputType="textPassword" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <FrameLayout
+                        android:id="@+id/sign_up_name_container_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/et_margin_vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sign_up_pw_container_layout">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/login_input_text_height"
+                            android:paddingBottom="1dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/bg_sign_up_edit" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/sign_up_name_et_layout"
+                            style="@style/MyCoupang.Widget.Material3.TextInputLayout.FilledBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/sign_up_pw_container_layout"
+                            app:startIconDrawable="@drawable/ic_person_name">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                style="@style/MyCoupang.SignUp.Widget.AppCompat.EditText"
+                                android:id="@+id/sign_up_name_et"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/login_input_text_height"
+                                android:hint="@string/sign_up_hint_name_str"
+                                android:text="@={viewModel.userName}"
+                                android:inputType="text" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/sign_up_pn_container_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/et_margin_vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sign_up_name_container_layout">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/login_input_text_height"
+                            android:paddingBottom="1dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/bg_sign_up_edit" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/sign_up_pn_et_layout"
+                            style="@style/MyCoupang.Widget.Material3.TextInputLayout.FilledBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/sign_up_name_et_layout"
+                            app:startIconDrawable="@drawable/ic_phone">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/sign_up_pn_et"
+                                style="@style/MyCoupang.SignUp.Widget.AppCompat.EditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/login_input_text_height"
+                                android:hint="@string/sign_up_hint_pn_str"
+                                android:text="@={viewModel.phone}"
+                                android:imeOptions="actionSend"
+                                android:inputType="phone" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </FrameLayout>
+
+                    <View
+                        android:id="@+id/sign_up_hor_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@color/greyF2F3F7"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sign_up_pn_container_layout" />
+
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/sign_up_all_cb"
+                        android:layout_width="@dimen/terms_cb_scale"
+                        android:layout_height="@dimen/terms_cb_scale"
+                        android:layout_marginTop="10dp"
+                        android:button="@drawable/cb_sign_up"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sign_up_hor_line" />
+
+                    <TextView
+                        android:id="@+id/sign_up_terms_title_all_txt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="@string/sign_up_terms_title_all_str"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/sign_up_all_cb"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/sign_up_all_cb"
+                        app:layout_constraintTop_toTopOf="@id/sign_up_all_cb" />
+
+                    <TextView
+                        android:id="@+id/sign_up_terms_title_detail_all_txt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/sign_up_terms_title_detail_all_str"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/sign_up_terms_title_all_txt"
+                        app:layout_constraintTop_toBottomOf="@id/sign_up_terms_title_all_txt" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/sign_up_cb_all_container_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/bg_out_line"
+                        android:padding="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sign_up_terms_title_detail_all_txt"
+                        tools:layout_height="300dp">
+
+                        <include
+                            android:id="@+id/terms_age_layout"
+                            layout="@layout/layout_sign_up_terms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            bind:terms="@{viewModel.Companion.TERMS_AGE}" />
+
+                        <include
+                            android:id="@+id/terms_cp_layout"
+                            layout="@layout/layout_sign_up_terms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/terms_age_layout"
+                            bind:terms="@{viewModel.Companion.TERMS_CP}" />
+
+                        <include
+                            android:id="@+id/terms_ef_layout"
+                            layout="@layout/layout_sign_up_terms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/terms_cp_layout"
+                            bind:terms="@{viewModel.Companion.TERMS_EF}" />
+
+                        <include
+                            android:id="@+id/terms_pr_layout"
+                            layout="@layout/layout_sign_up_terms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/terms_ef_layout"
+                            bind:terms="@{viewModel.Companion.TERMS_PR}" />
+
+                        <include
+                            android:id="@+id/terms_prt_layout"
+                            layout="@layout/layout_sign_up_terms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/terms_pr_layout"
+                            bind:terms="@{viewModel.Companion.TERMS_PRT}" />
+
+                        <include
+                            android:id="@+id/terms_mt_layout"
+                            layout="@layout/layout_sign_up_terms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/terms_prt_layout"
+                            bind:terms="@{viewModel.Companion.TERMS_MT}" />
+
+                        <include
+                            android:id="@+id/terms_ad_title_layout"
+                            layout="@layout/layout_sign_up_terms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/terms_mt_layout"
+                            bind:terms="@{viewModel.Companion.TERMS_AD_TITLE}" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/sign_up_cb_ad_container_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/terms_ad_title_layout"
+                            tools:layout_height="300dp">
+
+                            <include
+                                android:id="@+id/terms_em_layout"
+                                layout="@layout/layout_sign_up_terms"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                bind:terms="@{viewModel.Companion.TERMS_EM}" />
+
+                            <include
+                                android:id="@+id/terms_sms_layout"
+                                layout="@layout/layout_sign_up_terms"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/terms_em_layout"
+                                bind:terms="@{viewModel.Companion.TERMS_SMS}" />
+
+                            <include
+                                android:id="@+id/terms_web_layout"
+                                layout="@layout/layout_sign_up_terms"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/terms_sms_layout"
+                                bind:terms="@{viewModel.Companion.TERMS_WEB}" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/sign_up_agree_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@color/blue0075E9"
+                        android:text="동의하고 가입하기"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sign_up_cb_all_container_layout" />
+
+                    <TextView
+                        android:id="@+id/sign_up_right_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="center"
+                        android:text="@string/coupang_right"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sign_up_agree_btn" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sign_up_right_txt" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+        </FrameLayout>
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="valueId"
+            type="Integer" />
+        <variable
+            name="adapter"
+            type="com.gram15inch.presentation.adapter.MenuTypeOptionAdapter" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/menu_op_rdo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="@={adapter.optionState[valueId]}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/menu_op_name_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/menu_op_rdo"
+            app:layout_constraintStart_toEndOf="@+id/menu_op_rdo"
+            app:layout_constraintTop_toTopOf="@+id/menu_op_rdo" />
+
+        <TextView
+            android:id="@+id/menu_op_price_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="(+13000)"
+            app:layout_constraintBottom_toBottomOf="@+id/menu_op_name_txt"
+            app:layout_constraintStart_toEndOf="@+id/menu_op_name_txt"
+            app:layout_constraintTop_toTopOf="@+id/menu_op_name_txt" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

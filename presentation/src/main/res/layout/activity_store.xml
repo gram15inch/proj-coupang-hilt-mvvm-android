@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.gram15inch.presentation.viewmodel.StoreViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fitsSystemWindows="true"
+            app:layout_constraintBottom_toTopOf="@id/store_bottom_cart_show_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/store_appBar_Layout"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@android:color/transparent"
+                android:fitsSystemWindows="true"
+                app:elevation="0dp">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/store_ctl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    app:contentScrim="@color/white"
+                    app:expandedTitleGravity="center_horizontal|bottom"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+                    app:scrimAnimationDuration="400"
+                    app:scrimVisibleHeightTrigger="100dp"
+                    app:statusBarScrim="@android:color/transparent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fitsSystemWindows="true"
+                        app:layout_collapseMode="parallax">
+
+                        <androidx.viewpager2.widget.ViewPager2
+                            android:id="@+id/store_top_view_pager"
+                            android:layout_width="match_parent"
+                            android:layout_height="240dp"
+                            android:adjustViewBounds="true"
+                            android:fitsSystemWindows="true"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/bn_event_10_3">
+
+
+                        </androidx.viewpager2.widget.ViewPager2>
+
+                        <TextView
+                            android:id="@+id/store_top_bn_state_txt"
+                            style="@style/MyCoupang.bn.state.textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="1 / 4"
+                            app:layout_constraintBottom_toTopOf="@+id/store_top_info_container"
+                            app:layout_constraintStart_toStartOf="@+id/store_top_info_container" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/store_top_photo_ic"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/bg_circle"
+                            android:backgroundTint="@color/white"
+                            android:clickable="true"
+                            android:padding="8dp"
+                            app:layout_constraintBottom_toTopOf="@+id/store_top_info_container"
+                            app:layout_constraintEnd_toEndOf="@+id/store_top_info_container"
+                            app:srcCompat="@drawable/ic_photo_png" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/store_top_info_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginBottom="2dp"
+                            android:background="@color/white"
+                            android:elevation="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+
+                            <TextView
+                                android:id="@+id/store_top_name_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:textColor="@color/black"
+                                android:textSize="26sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="반미362 기흥점" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/store_top_name_txt"
+                                app:layout_constraintStart_toStartOf="@+id/store_top_name_txt"
+                                app:layout_constraintTop_toBottomOf="@+id/store_top_name_txt">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/store_top_ci"
+                                    android:layout_width="70dp"
+                                    android:layout_height="30dp"
+                                    app:layout_constraintTop_toBottomOf="@+id/store_top_name_txt"
+                                    app:srcCompat="@drawable/lg_cheta" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/store_top_star_ic"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:paddingStart="10dp"
+                                    app:layout_constraintTop_toBottomOf="@+id/store_top_name_txt"
+                                    app:srcCompat="@drawable/ic_star"
+                                    tools:layout_editor_absoluteX="83dp" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/store_top_review"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/transparent"
+                                    android:gravity="center_vertical"
+                                    android:paddingStart="4dp"
+                                    android:text="4.9(415)"
+                                    android:textColor="@color/black"
+                                    app:chipIconSize="15dp"
+                                    app:layout_constraintTop_toBottomOf="@+id/store_top_name_txt"
+                                    tools:layout_editor_absoluteX="212dp" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/store_top_arrow"
+                                    android:layout_width="17dp"
+                                    android:layout_height="17dp"
+                                    android:paddingStart="3dp"
+                                    app:layout_constraintTop_toBottomOf="@+id/store_top_name_txt"
+                                    app:srcCompat="@drawable/ic_back_up_arrow"
+                                    tools:layout_editor_absoluteX="83dp" />
+
+                            </LinearLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/store_toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        app:layout_collapseMode="pin"
+                        app:menu="@menu/store_detail_menu">
+
+                    </androidx.appcompat.widget.Toolbar>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <com.amar.library.ui.StickyScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:stickyHeader="@+id/store_tab">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.tabs.TabLayout
+                            android:id="@+id/store_drvy_tab_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tabIndicatorColor="@color/store_devr_tab"
+                            app:tabIndicatorHeight="2dp"
+                            app:tabTextColor="@color/sc_store_devr_tab_text">
+
+                            <com.google.android.material.tabs.TabItem
+                                android:id="@+id/store_drvy_time_tab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="배달 15-25분"
+                                tools:layout_editor_absoluteX="26dp"
+                                tools:layout_editor_absoluteY="63dp" />
+
+                            <com.google.android.material.tabs.TabItem
+                                android:id="@+id/store_picup_tab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="포장 10-20분" />
+
+                        </com.google.android.material.tabs.TabLayout>
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/store_with_order_chip"
+                            androlayout_marginStart="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="15dp"
+                            android:elevation="0dp"
+                            android:minHeight="18dp"
+                            android:text="함께주문하기"
+                            android:textAppearance="@style/MyCoupang.textAppearance"
+                            android:textStyle="bold"
+                            app:chipBackgroundColor="@color/greyF5F6F8"
+                            app:chipIcon="@drawable/ic_with_png"
+                            app:chipIconSize="18dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/store_drvy_tab_layout" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/store_delivery_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:clickable="false"
+                            tools:text="도착까지 약 12-22분"
+                            android:textAppearance="@style/MyCoupang.textAppearance"
+                            app:chipBackgroundColor="@android:color/transparent"
+                            app:chipIcon="@drawable/ic_clock"
+                            app:chipIconSize="15dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/store_with_order_chip">
+
+
+                        </com.google.android.material.chip.Chip>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/store_history_chip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:text="매장 ⸳ 원산지정보"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView"
+                            app:layout_constraintEnd_toStartOf="@+id/appCompatImageView"
+                            app:layout_constraintTop_toTopOf="@+id/appCompatImageView" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/appCompatImageView"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_marginEnd="20dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/store_delivery_time"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/store_delivery_time"
+                            app:srcCompat="@drawable/ic_back_up_arrow" />
+
+                        <TextView
+                            android:id="@+id/store_fee_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="52dp"
+                            android:text="배달비"
+                            android:textColor="@color/black"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/store_with_order_chip" />
+
+                        <TextView
+                            android:id="@+id/store_min_order_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="15dp"
+                            android:text="최소주문"
+                            android:textColor="@color/black"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/store_fee_label" />
+
+                        <TextView
+                            android:id="@+id/store_min_fee_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="무료배달~"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="@+id/store_fee_label"
+                            app:layout_constraintStart_toStartOf="@+id/store_min_order_txt"
+                            app:layout_constraintTop_toTopOf="@+id/store_fee_label"
+                            app:layout_constraintVertical_bias="1.0" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/store_detail_btn"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:layout_width="48dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginBottom="52dp"
+                            android:background="@drawable/bg_round_10_rect"
+                            android:backgroundTint="@color/store_btn_bg"
+                            android:shadowColor="@android:color/transparent"
+                            android:text="자세히"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/store_min_fee_txt"
+                            app:layout_constraintStart_toEndOf="@+id/store_min_fee_txt"
+                            app:layout_constraintTop_toTopOf="@+id/store_min_fee_txt"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <TextView
+                            android:id="@+id/store_min_order_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            tools:text="13,000원"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="@+id/store_min_order_label"
+                            app:layout_constraintStart_toEndOf="@+id/store_min_order_label"
+                            app:layout_constraintTop_toTopOf="@+id/store_min_order_label" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/store_review_list_rcy"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/bg_out_line"
+                            app:layout_constraintTop_toBottomOf="@+id/store_min_order_label"
+                            app:srcCompat="@drawable/bn_logo_review" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/store_tab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="1dp"
+                        app:tabContentStart="20dp"
+                        app:tabIndicatorColor="@color/black"
+                        app:tabIndicatorFullWidth="false"
+                        app:tabIndicatorHeight="2dp"
+                        app:tabMode="scrollable"
+                        app:tabTextAppearance="@style/MyCoupang.ctgr.tab.textAppearance"
+                        app:tabTextColor="@color/sc_store_ctgr_tab_text">
+
+                    </com.google.android.material.tabs.TabLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/store_menu_rcy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="200dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                </LinearLayout>
+
+            </com.amar.library.ui.StickyScrollView>
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/store_bottom_cart_show_btn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/bottom_cart_show_btn"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/bottom_cart_size_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/bottom_cart_show_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="카트보기"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/bottom_cart_size_txt"
+                app:layout_constraintStart_toEndOf="@+id/bottom_cart_size_txt"
+                app:layout_constraintTop_toTopOf="@+id/bottom_cart_size_txt" />
+            <TextView
+                android:id="@+id/bottom_cart_coupay_save_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="쿠페이머니 결제 시 155원 적립" />
+            <TextView
+                android:id="@+id/bottom_cart_price_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/bottom_cart_coupay_save_txt"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="10,000원" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </layout>

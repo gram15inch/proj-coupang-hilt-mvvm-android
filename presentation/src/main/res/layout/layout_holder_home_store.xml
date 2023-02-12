@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp">
+
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/store_main_img"
+            android:layout_width="0dp"
+            android:layout_height="183dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toStartOf="@+id/store_sub_up_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/store_sub_up_img"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="4dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/store_main_img"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/bn_event_10_3"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/store_sub_down_img"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="3dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/store_sub_up_img" />
+
+        <TextView
+            android:id="@+id/store_name_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="가게이름"
+            android:maxWidth="250dp"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/store_main_img" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/store_isCi_label"
+            android:layout_width="87dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="4dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/lg_cheta"
+            app:layout_constraintBottom_toBottomOf="@+id/store_name_txt"
+            app:layout_constraintStart_toEndOf="@+id/store_name_txt"
+            app:layout_constraintTop_toTopOf="@+id/store_name_txt" />
+        <TextView
+            android:id="@+id/store_dev_time_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="배달시간"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/store_name_txt" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/store_star_ic"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_star"
+            android:tint="@color/store_star"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/store_name_txt" />
+
+        <TextView
+            android:id="@+id/store_info_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="가게정보"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/store_star_ic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/store_star_ic"
+            app:layout_constraintTop_toTopOf="@+id/store_star_ic" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/store_info_txt">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/store_coupon_label"
+                style="@style/MyCoupang.Store.State.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/coupon_label_bg"
+                android:textColor="@color/coupon_label_text"
+                android:drawableLeft="@drawable/ic_tag"
+                android:text=" 2000원 포장 쿠폰"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/store_new_label"
+                style="@style/MyCoupang.Store.State.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/new_label"
+                android:text="신규"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/store_isPac_label"
+                style="@style/MyCoupang.Store.State.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/pack_label"
+                android:text="포장 가능"
+                app:layout_constraintStart_toEndOf="@+id/store_new_label"
+                app:layout_constraintTop_toTopOf="@+id/store_new_label" />
+
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/bg_circle"
+            android:backgroundTint="@color/WhiteD9F4FF"
+            android:paddingTop="4dp"
+            android:paddingHorizontal="2dp"
+            android:paddingBottom="2dp"
+            app:srcCompat="@drawable/ic_heart" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,10 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="light_blue">#00AFFE</color>>
+    <color name="dark_blue">#1797E2</color>>
+    <color name="deep_dark_blue">#346AFF</color>
+    <color name="blue0075E9">#0075E9</color>>
+    <color name="grey333333">#333333</color>
+
+    <color name="greyF2F3F7">#F2F3F7</color>>
+    <color name="grey212B34">#212B34</color>>
+    <color name="grey919FAC">#919FAC</color>
+    <color name="red">#FF1100</color>>
+
+
+    <color name="black99000000">#99000000</color>
+
+    <color name="greyAAAAAA">#AAAAAA</color>
+    <color name="greyE3E3E3">#E3E3E3</color>
+    <color name="greyDCDCDC">#DCDCDC</color>
+    <color name="greyEEEEEE">#EEEEEE</color>
+
+    <color name="grey929FA8">#929FA8</color>
+    <color name="greyF4F4F4">#F4F4F4</color>
+    <color name="grey949EA8">#949EA8</color>
+    <color name="greyCACFD3">#CACFD3</color>
+    <color name="greyDFE2E7">#DFE2E7</color>
+    <color name="greyF5F6F8">#F5F6F8</color>
+    <color name="grey929EAA">#929EAA</color>
+    <color name="grey222B34">#222B34</color>
+
+
+
+
+    <color name="redE7223D">#E7223D</color>
+    <color name="redEF5959">#FF5959</color>
+    <color name="YellowFFC300">#FFC300</color>
+    <color name="YellowFEC400">#FEC400</color>
+    <color name="Blue0AACF7">#0AACF7</color>
+    <color name="BlueD9F4FF">#D9F4FF</color>
+
+    <color name="WhiteD9F4FF">#B2FFFFFF</color>
+    <color name="White00AFFE">#00AFFE</color>
+
+
+    <!-- all -->
+    <color name="bottom_cart_show_btn">@color/White00AFFE</color>
+
+
+    <!-- signUp -->
+    <color name="sign_up_start_icon">@color/greyE3E3E3</color>
+    <color name="sign_up_hint">@color/greyAAAAAA</color>
+    <color name="sign_error">@color/redE7223D</color>
+    <color name="sign_up_stroke">@color/greyDCDCDC</color>
+
+
+    <!-- Home -->
+    <color name="home_appbar_back">@color/greyF5F6F8</color>
+    <color name="title_compass_icon">@color/YellowFFC300</color>
+    <color name="title_down_icon">@color/blue0075E9</color>
+    <color name="chip_stroke">@color/greyDFE2E7</color>
+
+    <!--Store -->
+    <color name="store_info_rect">@color/Blue0AACF7</color>
+    <color name="store_devr_tab">@color/Blue0AACF7</color>
+    <color name="store_btn_bg">@color/greyF5F6F8</color>
+    <color name="store_bn_state_txt_bg">@color/black99000000</color>
+
+    <!--Home Store Holder-->
+    <color name="store_star">@color/YellowFEC400</color>
+    <color name="pack_label">@color/black</color>
+    <color name="new_label">@color/redEF5959</color>
+    <color name="coupon_label_bg">@color/BlueD9F4FF</color>
+    <color name="coupon_label_text">@color/Blue0AACF7</color>
+
+    <!--Store Category Holder -->
+    <color name="store_ctgr_bt_line">@color/greyF5F6F8</color>
+
+    <!-- Store Category Menu Holder -->
+    <color name="menu_label_bg">@color/BlueD9F4FF</color>
+    <color name="menu_label_text">@color/Blue0AACF7</color>
+    <color name="menu_bt_line">@color/greyEEEEEE</color>
+
+    <!-- Menu -->
+    <color name="menu_info_detail">@color/grey929FA8</color>
+    <color name="menu_info_div">@color/greyF4F4F4</color>
+    <color name="menu_count_btn_plus">@color/grey949EA8</color>
+    <color name="menu_count_btn_minus">@color/greyCACFD3</color>
+    <color name="menu_cart_btn">@color/greyDFE2E7</color>
+
+    <!-- Menu Category  -->
+
+    <color name="menu_ctgr_op_info">@color/greyF5F6F8</color>
+    <color name="menu_ctgr_op_need">@color/new_label</color>
+    <!-- Menu Category Option  -->
+
+
 </resources>

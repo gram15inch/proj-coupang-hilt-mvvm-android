@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data >
+        <import type="com.clone.mycoupang.domain.model.SignUpTerms"/>
+        <variable
+            name="terms"
+            type="SignUpTerms"/>
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/sign_up_cb"
+            android:layout_width="30dp"
+            android:layout_height="@dimen/terms_cb_scale"
+            android:button="@drawable/cb_sign_up"
+            app:layout_constraintEnd_toStartOf="@+id/sign_up_txt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sign_up_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+              android:text="@{terms.title}"
+            android:textColor="@color/grey333333"
+            app:layout_constraintBottom_toBottomOf="@+id/sign_up_cb"
+            app:layout_constraintEnd_toStartOf="@+id/sign_up_detail_btn"
+            app:layout_constraintStart_toEndOf="@+id/sign_up_cb"
+            app:layout_constraintTop_toTopOf="@+id/sign_up_cb"
+            tools:text="약관 내용" />
+
+        <ImageView
+            android:id="@+id/sign_up_detail_btn"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_back_up_arrow"
+            app:visibleDetail="@{terms.detail}"
+            app:tint="@color/grey212B34"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="@+id/sign_up_txt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/sign_up_txt" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="view"
+            type="com.clone.mycoupang.base.view.LoginEditText"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view_cp_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp">
+
+        <TextView
+            android:id="@+id/view_cp_label"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginStart="15dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            tools:text="이메일"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/view_cp_edit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            tools:hint="@string/login_cp_email_hint_str"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLength="20"
+            android:paddingVertical="5dp"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/view_cp_end_ic"
+            app:layout_constraintStart_toEndOf="@+id/view_cp_label"
+            app:layout_constraintTop_toTopOf="parent"
+            app:textLive="@={view.editTextValue}" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/view_cp_end_ic"
+            android:layout_width="50dp"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            android:checkable="true"
+            android:clickable="true"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/view_cp_edit"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

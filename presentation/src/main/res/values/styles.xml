@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.MyCoupang.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemIconTint">@color/bottom_nav_selector</item>
+        <item name="itemTextColor">@color/bottom_nav_selector</item>
+        <item name="itemTextAppearanceActive">@style/MyCoupang.itemTextAppearanceActive</item>
+        <item name="itemTextAppearanceInactive">@style/MyCoupang.itemTextAppearanceInactive</item>
+    </style>
+
+    <style name="MyCoupang.itemTextAppearanceActive" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="MyCoupang.itemTextAppearanceInactive" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">11sp</item>
+
+    </style>
+
+    <style name="Mycoupang.empty.textView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="MyCoupang.Widget.MaterialComponents.Button.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="shapeAppearanceOverlay">@style/MyCoupang.ShapeAppearance</item>
+    </style>
+
+    <style name="MyCoupang.ShapeAppearance" parent="">
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="cornerFamilyTopRight">cut</item>
+        <item name="cornerFamilyBottomRight">cut</item>
+        <item name="cornerSize">2dp</item>
+    </style>
+
+    <style name="MyCoupang.SignUp.Widget.AppCompat.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="hintTextColor">@color/sign_up_hint</item>
+
+
+    </style>
+
+    <style name="MyCoupang.Widget.Material3.TextInputLayout.FilledBox" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="errorTextColor">@color/sign_error</item>
+        <item name="android:textColorHint">@color/sign_error</item>
+        <item name="colorError">@color/sign_error</item>
+        <item name="boxStrokeErrorColor">@color/sign_error</item>
+        <item name="boxStrokeColor">@color/sc_sign_up_fill</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="android:textCursorDrawable">@color/dark_blue</item>
+        <item name="android:paddingHorizontal">0dp</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="hintEnabled">false</item>
+        <item name="boxBackgroundColor">@android:color/transparent</item>
+        <item name="startIconTint">@color/sign_up_start_icon</item>
+        <item name="endIconTint">@color/sign_up_start_icon</item>
+        <item name="android:backgroundTint">@color/sign_up_start_icon</item>
+
+    </style>
+
+    <style name="Mycoupang.toolBar.title" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Mycoupang.chip.action" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="chipBackgroundColor">@color/white</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipStrokeColor">@color/chip_stroke</item>
+        <item name="chipIconTint">@color/black</item>
+        <item name="chipIcon">@drawable/ic_arrow_down</item>
+        <item name="chipIconSize">12dp</item>
+        <item name="chipMinHeight">28dp</item>
+        <item name="chipStartPadding">10dp</item>
+
+
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/chip_text_selector</item>
+        <item name="android:layoutDirection">rtl</item>
+    </style>
+
+    <style name="MyCoupang.Store.State.TextView" parent="Widget.AppCompat.TextView">
+
+        <item name="android:paddingHorizontal">5dp</item>
+        <item name="android:paddingVertical">2dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/bg_round_4_rect</item>
+        <item name="android:layout_marginEnd">5dp</item>
+
+    </style>
+
+    <style name="Theme.MyCoupang.CollapsingToolbar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="MyCoupang.textAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MyCoupang.devr.tab.textAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MyCoupang.ctgr.tab.textAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="MyCoupang.cart.tab.textAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Mycoupang.menuLabel.textView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingHorizontal">7dp</item>
+        <item name="android:paddingVertical">3dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/bg_round_10_stroke_rect</item>
+        <item name="android:textColor">@color/menu_label_text</item>
+        <item name="android:layout_marginEnd">4dp</item>
+
+    </style>
+
+    <style name="MyCoupang.bn.state.textView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">9sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/bg_round_10_rect</item>
+        <item name="android:backgroundTint">@color/store_bn_state_txt_bg</item>
+        <item name="android:paddingHorizontal">10dp</item>
+        <item name="android:paddingVertical">5dp</item>
+
+    </style>
+
+    <style name="MyCoupang.count.ImageButton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:padding">25dp</item>
+    </style>
+
+</resources>

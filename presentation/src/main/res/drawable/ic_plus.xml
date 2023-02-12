@@ -1,0 +1,9 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="15dp"
+    android:height="15dp"
+    android:viewportWidth="75"
+    android:viewportHeight="75">
+  <path
+      android:pathData="M41.588,64H33.414V41.862H11V33.615H33.414V11H41.588V33.615L64,33.615V41.862H41.588V64Z"
+      android:fillColor="@color/menu_count_btn_plus"/>
+</vector>

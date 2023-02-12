@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.gram15inch.presentation.ui.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.gram15inch.presentation.ui.SearchFragment"
+        android:label="SearchFragment" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.gram15inch.presentation.ui.HistoryFragment"
+        android:label="HistoryFragment" />
+    <fragment
+        android:id="@+id/bookmarkFragment"
+        android:name="com.gram15inch.presentation.ui.BookmarkFragment"
+        android:label="BookmarkFragment" />
+    <fragment
+        android:id="@+id/eatsFragment"
+        android:name="com.gram15inch.presentation.ui.EatsFragment"
+        android:label="EatsFragment" >
+        <action
+            android:id="@+id/action_eatsFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+    </fragment>
+
+</navigation>

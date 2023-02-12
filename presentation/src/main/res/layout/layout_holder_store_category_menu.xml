@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        >
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/menu_title_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/menu_order_most_label"
+                    style="@style/Mycoupang.menuLabel.textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="주문많음" />
+
+                <TextView
+                    android:id="@+id/menu_reivew_most_label"
+                    style="@style/Mycoupang.menuLabel.textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="리뷰최고" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/menu_name_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="야채반미"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/menu_price_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="4,400원"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/menu_name_txt"
+                app:layout_constraintTop_toBottomOf="@+id/menu_name_txt" />
+
+            <TextView
+                android:id="@+id/menu_infoi_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="고수가 들어가있지 않습니다~ 고수를 원하는 고객님은 옵션에서 추가해 주세요~!!"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/menu_price_txt"
+                app:layout_constraintTop_toBottomOf="@+id/menu_price_txt" />
+
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/menu_like_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                tools:text="249명"
+                android:textSize="14sp"
+                app:chipBackgroundColor="@android:color/transparent"
+                app:chipIcon="@drawable/ic_like"
+                app:chipIconSize="14dp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/menu_title_img"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout"
+            app:srcCompat="@drawable/bn_menu_photo" />
+
+        <ImageView
+            android:id="@+id/menu_cart_ic"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
+            app:layout_constraintBottom_toBottomOf="@+id/menu_title_img"
+            app:layout_constraintEnd_toEndOf="@+id/menu_title_img"
+            android:background="@drawable/bg_circle"
+            android:backgroundTint="@color/white"
+            app:srcCompat="@drawable/ic_cart_png"
+            android:paddingEnd="6.5dp"
+            android:paddingStart="4.5dp"
+            android:paddingVertical="4.5dp"
+            />
+
+        <View
+            android:id="@+id/menu_bt_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/menu_bt_line"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

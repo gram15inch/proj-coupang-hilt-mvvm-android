@@ -1,0 +1,10 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="12dp"
+    android:height="12dp"
+    android:viewportWidth="570"
+    android:viewportHeight="570">
+    <path
+        android:fillColor="@color/coupon_label_text"
+        android:fillType="evenOdd"
+        android:pathData="M481.91,23.09C514.97,23.09 541.78,49.91 541.78,83L541.78,264.42C541.78,283.48 534.21,301.77 520.73,315.25L331.58,504.54C294.18,541.97 233.53,541.97 196.13,504.54L60.68,368.99C23.27,331.55 23.27,270.87 60.68,233.44L249.83,44.15C263.3,30.67 281.57,23.09 300.63,23.09L481.91,23.09ZM349.02,180.05C349.02,199.9 365.1,215.99 384.93,215.99C404.77,215.99 420.85,199.9 420.85,180.05C420.85,160.2 404.77,144.11 384.93,144.11C365.1,144.11 349.02,160.2 349.02,180.05Z" />
+</vector>
