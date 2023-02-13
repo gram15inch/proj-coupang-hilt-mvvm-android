@@ -2,10 +2,8 @@ package com.gram15inch.data.repogitory
 
 import com.gram15inch.data.converter.AddressConverter
 import com.gram15inch.data.remote.AddressApiService
-import com.gram15inch.data.remote.model.address.AddressResponse
 import com.gram15inch.domain.model.address.Address
 import com.gram15inch.domain.repository.AddressRepository
-import retrofit2.Response
 import javax.inject.Inject
 
 class AddressRepositoryImpl @Inject constructor (private val addressApiService: AddressApiService):

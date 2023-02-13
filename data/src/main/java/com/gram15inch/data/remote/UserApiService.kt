@@ -1,9 +1,9 @@
 package com.gram15inch.data.remote
 
-import com.gram15inch.domain.model.user.LoginRequest
 import com.gram15inch.data.remote.model.user.LoginResponse
 import com.gram15inch.domain.model.user.SignUpRequest
 import com.gram15inch.data.remote.model.user.SignUpResponse
+import com.gram15inch.domain.model.user.LoginRequest
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.POST

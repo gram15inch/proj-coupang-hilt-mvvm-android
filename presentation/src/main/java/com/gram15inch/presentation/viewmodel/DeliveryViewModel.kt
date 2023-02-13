@@ -37,17 +37,11 @@ class DeliveryViewModel @Inject constructor(private val orderRepository: OrderRe
     fun refreshHistory(orderId:Int) {
         viewModelScope.launch {// todo userId pref 에서 받아와야함
             orderRepository.getHistory(1).apply {
-                if (this.body()?.isSuccess == true)
-                    body()?.result?.run {
-                        this.filter {
-                            it.orderInfo.orderId == orderId
-                        }.also {
-                            it.map { OrderConverter.toHistory(it) }
-                                .also {
-                                    _history.emit(it)
-                                }
-                        }
-                    }
+                this.filter {
+                    it.id == orderId
+                }.also {
+                    _history.emit(it)
+                }
             }
         }
     }

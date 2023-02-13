@@ -2,10 +2,10 @@ package com.gram15inch.presentation.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.gram15inch.domain.model.user.LoginRequest
 import com.clone.mycoupang.domain.policy.LoginState
 import com.clone.mycoupang.domain.policy.verifyEmail
 import com.clone.mycoupang.domain.policy.verifyPassword
+import com.gram15inch.domain.model.user.LoginRequest
 import com.gram15inch.domain.repository.UserRepository
 import com.gram15inch.presentation.MyCoupangEatsApplication
 import com.gram15inch.presentation.MyCoupangEatsApplication.Companion.X_ACCESS_TOKEN
@@ -28,13 +28,15 @@ class LoginViewModel @Inject constructor(private val userRepository: UserReposit
         setEmail("rising123456@rising.co.kr")
         setPassword("202duck!@#$")
     }
-    fun clear(){
+
+    fun clear() {
         viewModelScope.launch {
             _flowEmail.emit("")
             _flowPassword.emit("")
         }
 
     }
+
     fun login() {
         //testUserInput()
         viewModelScope.launch(exceptionHandler) {
@@ -52,17 +54,15 @@ class LoginViewModel @Inject constructor(private val userRepository: UserReposit
                 else -> {
                     userRepository.postLogin(request)
                         .apply {
-                            if (this.body()?.isSuccess == true) {
+                            if (this != null) {
                                 loginState.postValue(LoginState.SUCCESS)
                                 MyCoupangEatsApplication.prefs.setString(
                                     X_ACCESS_TOKEN,
-                                    body()?.remoteLogin?.jwt ?: ""
+                                    this.jwt
                                 )
-                            } else {
+                            } else
                                 loginState.postValue(LoginState.FAIL)
-                            }
                         }
-                    //loginState.postValue(LoginState.FAIL)
                 }
             }
 

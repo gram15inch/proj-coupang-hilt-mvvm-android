@@ -1,13 +1,17 @@
-
+import com.gram15inch.buildsrc.Versions
 import com.gram15inch.buildsrc.Libraries
 import com.gram15inch.buildsrc.UnitTest
+import com.gram15inch.buildsrc.AndroidX
+import com.gram15inch.buildsrc.Kotlin
+import com.gram15inch.buildsrc.Google
+import com.gram15inch.buildsrc.AndroidTest
 
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("com.google.dagger.hilt.android")
-    id("kotlin-kapt")
     id("de.mannodermaus.android-junit5")
+    id("kotlin-kapt")
 }
 
 android {
@@ -19,6 +23,11 @@ android {
         targetSdk = 33
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments["dagger.hilt.disableModulesHaveInstallInCheck"]="true"
+            }
+        }
         consumerProguardFiles("consumer-rules.pro")
     }
 
@@ -32,31 +41,32 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "1.8"
     }
 }
 
 dependencies {
     implementation(project(mapOf("path" to ":domain")))
+
     testImplementation(UnitTest.JUNIT)
 
     // dagger
-    implementation(com.gram15inch.buildsrc.Google.HILT_ANDROID)
-    kapt (com.gram15inch.buildsrc.Google.HILT_ANDROID_COMPILER)
+    implementation(Google.HILT_ANDROID)
+    kapt (Google.HILT_COMPILER)
 
     //hilt test
     // For Robolectric tests.
-    testImplementation (com.gram15inch.buildsrc.Google.HILT_ANDROID_TESTING)
+    testImplementation (Google.HILT_ANDROID_TESTING)
     // ...with Kotlin.
-    kaptTest (com.gram15inch.buildsrc.Google.HILT_ANDROID_COMPILER)
+    kaptTest (Google.HILT_ANDROID_COMPILER)
     // For instrumented tests.
-    androidTestImplementation (com.gram15inch.buildsrc.Google.HILT_ANDROID_TESTING)
+    androidTestImplementation (Google.HILT_ANDROID_TESTING)
     // ...with Kotlin.
-    kaptAndroidTest (com.gram15inch.buildsrc.Google.HILT_ANDROID_COMPILER)
+    kaptAndroidTest (Google.HILT_ANDROID_COMPILER)
     testImplementation(Libraries.MOCKK)
 
 
@@ -82,5 +92,9 @@ dependencies {
     implementation (Libraries.OKHTTP_LOGGING_INTERCEPTOR)
 
     //coroutine
-    testImplementation (com.gram15inch.buildsrc.Kotlin.COROUTINES_TEST)
+    testImplementation (Kotlin.COROUTINES_TEST)
+
+    // Timber : Log util
+    implementation(Libraries.TIMBER)
+
 }

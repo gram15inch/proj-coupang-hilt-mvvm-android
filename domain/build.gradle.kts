@@ -11,8 +11,8 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("com.google.dagger.hilt.android")
-    id("kotlin-kapt")
     id("de.mannodermaus.android-junit5")
+    id("kotlin-kapt")
 }
 
 android {
@@ -24,6 +24,11 @@ android {
         targetSdk = Versions.TARGET_SDK_VERSION
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments["dagger.hilt.disableModulesHaveInstallInCheck"]="true"
+            }
+        }
         consumerProguardFiles("consumer-rules.pro")
     }
 
@@ -37,20 +42,34 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "1.8"
     }
 }
 
 dependencies {
     testImplementation(UnitTest.JUNIT)
+    
+    // retrofit for networking
+    implementation (Libraries.RETROFIT)
+    implementation (Libraries.RETROFIT_KOTLIN_COROUTINES_ADAPTER)
+    implementation (Libraries.RETROFIT_CONVERTER_MOSHI)
+    androidTestImplementation (Libraries.RETROFIT_CONVERTER_MOSHI)
+
+    // moshi for parsing the JSON format
+
+    implementation (Libraries.MOSHI)
+    implementation (Libraries.MOSHI_KOTLIN)
+    implementation (Libraries.MOSHI_ADAPTERS)
+    kapt(Libraries.MOSHI_CODEGEN)
+
 
     // dagger
     implementation(Google.HILT_ANDROID)
-    kapt (Google.HILT_ANDROID_COMPILER)
+    kapt (Google.HILT_COMPILER)
 
     //hilt test
     // For Robolectric tests.
@@ -65,5 +84,8 @@ dependencies {
 
     // retrofit for networking
     implementation (Libraries.RETROFIT)
+
+// Timber : Log util
+    implementation(Libraries.TIMBER)
 
 }

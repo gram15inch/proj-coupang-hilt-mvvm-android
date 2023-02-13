@@ -1,8 +1,8 @@
 package com.gram15inch.data.remote
 
 import com.gram15inch.data.remote.model.order.add.OrderAddResponse
-import com.gram15inch.domain.model.order.add.request.OrderAddRequest
 import com.gram15inch.data.remote.model.order.history.HistoryResponse
+import com.gram15inch.domain.model.order.add.OrderAddRequest
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET

@@ -1,4 +1,4 @@
-package com.gram15inch.domain.model.store
+package com.gram15inch.domain.model.store.detail
 
 data class StoreCategory(
     val id: Int,

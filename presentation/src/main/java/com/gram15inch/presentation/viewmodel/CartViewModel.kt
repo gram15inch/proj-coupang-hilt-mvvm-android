@@ -3,16 +3,14 @@ package com.gram15inch.presentation.viewmodel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.gram15inch.presentation.base.ErrorHandleViewModel
-import com.gram15inch.data.remote.model.order.add.RemoteOrderAdd
-import com.gram15inch.domain.model.order.add.request.Menu
-import com.gram15inch.domain.model.order.add.request.OrderAddRequest
-import com.gram15inch.data.converter.AddressConverter
-import com.gram15inch.data.converter.PayConverter
 import com.gram15inch.domain.model.address.Address
 import com.gram15inch.domain.model.pay.Pay
-import com.gram15inch.domain.model.store.CartMenu
+import com.gram15inch.domain.model.cart.CartMenu
 import com.gram15inch.domain.model.store.StoreDetail
 import com.clone.mycoupang.domain.policy.calculateCartPrice
+import com.gram15inch.domain.model.order.add.Menu
+import com.gram15inch.domain.model.order.add.OrderAddRequest
+import com.gram15inch.domain.model.order.history.OrderAdd
 import com.gram15inch.domain.repository.AddressRepository
 import com.gram15inch.domain.repository.CartRepository
 import com.gram15inch.domain.repository.OrderRepository
@@ -37,7 +35,7 @@ class CartViewModel @Inject constructor(
     private val _cartStore = MutableStateFlow<List<StoreDetail>>(emptyList())
     private val _totalPrice = MutableStateFlow(0)
     private val _cartAddr = MutableStateFlow<List<Address>>(emptyList())
-    private val _cartOrderAdd = MutableStateFlow<List<RemoteOrderAdd>>(emptyList())
+    private val _cartOrderAdd = MutableStateFlow<List<OrderAdd>>(emptyList())
     private val _cartPay = MutableStateFlow<List<Pay>>(emptyList())
     private val _cartDevrMsg = MutableStateFlow( "")
     val cartDevrMsg = _cartDevrMsg.asLiveData()
@@ -68,15 +66,8 @@ class CartViewModel @Inject constructor(
                 X_ACCESS_TOKEN,
                 "eyJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJ1c2VySWR4IjoxLCJpYXQiOjE2NzU1ODI0NjYsImV4cCI6MTY3NzA1MzY5NX0.SgGJotjuT18Y-OxNAdSkHpSu1TSAIfW0Oerobh2Seco"
             )     //todo 합칠때 토큰  지우기 (해피)
-            payRepository.getPayments().apply {
-                if (this.body()?.isSuccess == true)
-                    body()?.result?.run {
-                        this.run {
-                             PayConverter.toPay(this)
-                        }.also {
-                            _cartPay.emit(it)
-                        }
-                    }
+            payRepository.getPayments().also {
+                _cartPay.emit(it)
             }
         }
 
@@ -84,8 +75,6 @@ class CartViewModel @Inject constructor(
 
 
     fun addOrder() {
-
-
 
         viewModelScope.launch {
             MyCoupangEatsApplication.prefs.setString(
@@ -107,12 +96,8 @@ class CartViewModel @Inject constructor(
                 )
             ).also {
                 viewModelScope.launch {
-                    if (it.body()?.isSuccess == true)
-                        it.body()?.result?.run {
-                            this.run {
-                                _cartOrderAdd.emit(listOf(this))
-                            }
-                        }
+                    if (it!=null)
+                        _cartOrderAdd.emit(listOf(it))
                 }
             }
         }
@@ -136,17 +121,9 @@ class CartViewModel @Inject constructor(
             X_ACCESS_TOKEN,
             "eyJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJ1c2VySWR4IjoxLCJpYXQiOjE2NzU1MjE0MDgsImV4cCI6MTY3Njk5MjYzN30.cDKAWGYLhki019hj3bKISJ9Lw5unlCzwqqLbnMGp9gs"
         )
-        //todo 합칠때 토큰  지우기
         viewModelScope.launch {
-            addressRepository.getAddress().apply {
-                if (this.body()?.isSuccess == true)
-                    body()?.result?.run {
-                        this.run {
-                            this.map { AddressConverter.toAddress(it) }
-                        }.also {
-                            _cartAddr.emit(it)
-                        }
-                    }
+            addressRepository.getAddress().also {
+                _cartAddr.emit(it)
             }
         }
     }

@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data >
-        <import type="com.clone.mycoupang.domain.model.SignUpTerms"/>
+        <import type="com.gram15inch.domain.model.terms.SignUpTerms"/>
         <variable
             name="terms"
-            type="SignUpTerms"/>
+            type="com.gram15inch.domain.model.terms.SignUpTerms"/>
 
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout

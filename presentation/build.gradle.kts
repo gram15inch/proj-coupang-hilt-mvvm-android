@@ -11,8 +11,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.dagger.hilt.android")
-    id("kotlin-kapt")
     id("de.mannodermaus.android-junit5")
+    id("kotlin-kapt")
 }
 
 android {
@@ -26,6 +26,11 @@ android {
         versionName = Versions.VERSION_NAME
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments["dagger.hilt.disableModulesHaveInstallInCheck"]="true"
+            }
+        }
         testInstrumentationRunnerArguments["runnerBuilder"] = "de.mannodermaus.junit5.AndroidJUnit5Builder"
 
     }
@@ -41,11 +46,11 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "1.8"
     }
     buildFeatures {
         viewBinding = true
@@ -54,9 +59,8 @@ android {
 }
 
 dependencies {
+    implementation(project(mapOf("path" to ":domain")))
 
-    implementation(project(":domain"))
-    implementation(project(mapOf("path" to ":data")))
 
     implementation(AndroidX.CORE_KTX)
     implementation(AndroidX.APP_COMPAT)
@@ -91,7 +95,7 @@ dependencies {
 
     // dagger
     implementation(Google.HILT_ANDROID)
-    kapt (Google.HILT_ANDROID_COMPILER)
+    kapt (Google.HILT_COMPILER)
 
     //hilt test
     // For Robolectric tests.

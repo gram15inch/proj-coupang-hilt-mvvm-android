@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.gram15inch.domain.model.store.StoreCategoryMenu
+import com.gram15inch.domain.model.store.detail.StoreCategoryMenu
 import com.gram15inch.mycoupangeats.databinding.LayoutHolderStoreCategoryMenuBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

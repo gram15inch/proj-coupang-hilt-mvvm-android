@@ -4,8 +4,7 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.viewpager2.widget.ViewPager2
 import com.gram15inch.presentation.base.ErrorHandleViewModel
-import com.gram15inch.data.converter.StoreConverter
-import com.gram15inch.domain.model.store.CartMenu
+import com.gram15inch.domain.model.cart.CartMenu
 import com.gram15inch.domain.model.store.StoreDetail
 import com.gram15inch.domain.repository.CartRepository
 import com.gram15inch.domain.repository.StoreRepository
@@ -41,14 +40,8 @@ class StoreViewModel @Inject constructor(
         viewModelScope.launch() {
             storeRepository.getStoreDetail(storeId)
                 .apply {
-                    if (this.body()?.isSuccess == true)
-                        if (this.body()?.result != null)
-                            this.body()?.result?.run {
-                                StoreConverter.toStoreDetail(this)
-                                    .run {
-                                        storeFlow.emit(this)
-                                    }
-                            }
+                    if(this!=null)
+                        storeFlow.emit(this)
                 }
         }
     }

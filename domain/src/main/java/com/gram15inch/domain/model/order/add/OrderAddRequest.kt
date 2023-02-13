@@ -1,6 +1,4 @@
-package com.gram15inch.domain.model.order.add.request
-
-import com.gram15inch.domain.model.order.add.request.Menu
+package com.gram15inch.domain.model.order.add
 
 data class OrderAddRequest(
     val addressId: Int,

@@ -5,7 +5,7 @@ import com.gram15inch.presentation.base.ErrorHandleViewModel
 import com.gram15inch.data.converter.MenuConverter
 import com.gram15inch.domain.model.menu.MenuDetail
 import com.gram15inch.domain.model.menu.SelectedMenuType
-import com.gram15inch.domain.model.store.CartMenu
+import com.gram15inch.domain.model.cart.CartMenu
 import com.clone.mycoupang.domain.policy.calculateCartMenuPrice
 import com.gram15inch.domain.repository.CartRepository
 import com.gram15inch.domain.repository.MenuRepository
@@ -34,15 +34,10 @@ class MenuViewModel @Inject constructor(
     fun menuRefresh(storeId: Int, menuId: Int) {
         viewModelScope.launch {
             menuRepository.getMenu(storeId, menuId).apply {
-                if (this.body()?.isSuccess == true)
-                    if (this.body()?.result != null)
-                        this.body()?.result?.run {
-                            MenuConverter.toMenuDetail(this)
-                                .also { menuDetail ->
-                                    menuFlow.emit(menuDetail)
-                                    totalPrice.emit(menuDetail.price)
-                                }
-                        }
+                if(this!=null) {
+                    menuFlow.emit(this)
+                    totalPrice.emit(this.price)
+                }
             }
         }
     }
@@ -57,7 +52,7 @@ class MenuViewModel @Inject constructor(
                         selectedTypes.map {
                             MenuConverter.toMenuType(it)
                         })
-                        .also { calPrice -> totalPrice.emit(calPrice)}
+                        .also { calPrice -> totalPrice.emit(calPrice) }
             }
         }
     }

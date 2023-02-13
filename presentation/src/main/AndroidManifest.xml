@@ -11,8 +11,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyCoupangeats">
         <activity
-            android:name="com.gram15inch.presentation.ui"
+            android:name="com.gram15inch.presentation.ui.DeliveryActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.gram15inch.presentation.ui.CartActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.gram15inch.presentation.ui.MenuActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MyCoupang.CollapsingToolbar" />
+        <activity
+            android:name="com.gram15inch.presentation.ui.StoreActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MyCoupang.CollapsingToolbar" />
+        <activity
+            android:name="com.gram15inch.presentation.ui.SignUpActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.gram15inch.presentation.ui.LoginActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.gram15inch.presentation.ui.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <!--   <intent-filter>
+                   <action android:name="android.intent.action.MAIN" />
+
+                   <category android:name="android.intent.category.LAUNCHER" />
+               </intent-filter>-->
+        </activity>
+        <activity
+            android:name="com.gram15inch.presentation.ui.MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

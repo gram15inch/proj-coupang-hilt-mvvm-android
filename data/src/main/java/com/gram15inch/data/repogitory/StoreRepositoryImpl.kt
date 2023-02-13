@@ -1,6 +1,6 @@
 package com.gram15inch.data.repogitory
 
-import com.gram15inch.domain.model.store.Store
+import com.gram15inch.domain.model.store.detail.Store
 import com.gram15inch.domain.model.store.StoreDetail
 import com.gram15inch.domain.model.store.home.HomeCategory
 import com.gram15inch.data.converter.StoreConverter

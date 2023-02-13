@@ -2,11 +2,10 @@ package com.gram15inch.presentation.viewmodel
 
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import com.clone.mycoupang.MyApplication
 import com.gram15inch.presentation.base.ErrorHandleViewModel
-import com.clone.mycoupang.data.remote.model.user.SignUpRequest
-import com.clone.mycoupang.domain.model.SignUpTerms
+import com.gram15inch.domain.model.terms.SignUpTerms
 import com.clone.mycoupang.domain.policy.SignUpState
+import com.gram15inch.domain.model.user.SignUpRequest
 import com.gram15inch.domain.repository.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -38,12 +37,11 @@ class SignUpViewModel @Inject constructor(private val userRepository: UserReposi
             )
             userRepository.postSignUp(request)
                 .apply {
-                    if (this.body()?.isSuccess == true) {
+                    if (this != null) {
                         _signUpState.emit(SignUpState.SUCCESS)
                     } else
                         _signUpState.emit(SignUpState.FAIL)
                 }
-            //_signUpState.emit(SignUpState.SUCCESS)
         }
     }
 

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
 
-import com.clone.mycoupang.domain.model.SignUpTerms
+import com.gram15inch.domain.model.terms.SignUpTerms
 import com.gram15inch.mycoupangeats.R
 import com.gram15inch.mycoupangeats.databinding.FragmentTermsDialogBinding
 import dagger.hilt.android.AndroidEntryPoint

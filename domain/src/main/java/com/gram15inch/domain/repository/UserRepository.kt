@@ -1,14 +1,14 @@
 package com.gram15inch.domain.repository
 
-import com.clone.mycoupang.data.remote.model.user.LoginRequest
-import com.clone.mycoupang.data.remote.model.user.LoginResponse
-import com.clone.mycoupang.data.remote.model.user.SignUpRequest
-import com.clone.mycoupang.data.remote.model.user.SignUpResponse
-import retrofit2.Response
+
+import com.gram15inch.domain.model.user.Login
+import com.gram15inch.domain.model.user.LoginRequest
+import com.gram15inch.domain.model.user.SignUp
+import com.gram15inch.domain.model.user.SignUpRequest
 
 
 interface UserRepository {
-    suspend fun postLogin(request: LoginRequest): Response<LoginResponse>
-    suspend fun postSignUp(request: SignUpRequest): Response<SignUpResponse>
+    suspend fun postLogin(request: LoginRequest): Login?
+    suspend fun postSignUp(request: SignUpRequest): SignUp?
 }
 

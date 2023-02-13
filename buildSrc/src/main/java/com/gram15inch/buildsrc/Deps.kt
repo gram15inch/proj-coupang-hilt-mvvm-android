@@ -11,7 +11,6 @@ object Versions {
     const val VERSION_NAME = "1.0" //
 
 
-
     const val KOTLIN_VERSION = "1.9.0" //
     const val KOTLINX_COROUTINES = "1.6.1"
     const val BUILD_GRADLE = "4.2.1"
@@ -98,6 +97,7 @@ object AndroidX {
 
 object Google {
     const val HILT_ANDROID          = "com.google.dagger:hilt-android:${Versions.HILT}"//
+    const val HILT_COMPILER         = "com.google.dagger:hilt-compiler:${Versions.HILT}"//
     const val HILT_ANDROID_COMPILER = "com.google.dagger:hilt-android-compiler:${Versions.HILT}"//
     const val HILT_ANDROID_TESTING = "com.google.dagger:hilt-android-testing:${Versions.HILT}"//
 
@@ -128,8 +128,6 @@ object Libraries {
     const val GLIDE = "com.github.bumptech.glide:glide:${Versions.GLIDE}"//4.11.0
 
 }
-
-
 
 
 object UnitTest {

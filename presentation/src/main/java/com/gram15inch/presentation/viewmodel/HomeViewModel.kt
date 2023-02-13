@@ -3,17 +3,13 @@ package com.gram15inch.presentation.viewmodel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.viewpager2.widget.ViewPager2
-import com.gram15inch.presentation.base.ErrorHandleViewModel
 import com.gram15inch.data.remote.model.store.pick.PickStoreRequest
-import com.gram15inch.data.converter.EventConverter
-import com.gram15inch.data.converter.StoreConverter
 import com.gram15inch.domain.model.event.Event
-import com.gram15inch.domain.model.store.Store
+import com.gram15inch.domain.model.store.detail.Store
 import com.gram15inch.domain.model.store.home.HomeCategory
-import com.gram15inch.domain.repository.AddressRepository
 import com.gram15inch.domain.repository.EventRepository
 import com.gram15inch.domain.repository.StoreRepository
-import com.gram15inch.domain.repository.UserRepository
+import com.gram15inch.presentation.base.ErrorHandleViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -23,8 +19,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val userRepository: UserRepository,
-    private val addressRepository: AddressRepository,
     private val storeRepository: StoreRepository,
     private val eventRepository: EventRepository,
 ) : ErrorHandleViewModel() {
@@ -56,25 +50,22 @@ class HomeViewModel @Inject constructor(
                 if (it.isNotEmpty())
                     sortCategory()
             }
-
         }
     }
 
     fun sortCategory() {
         val sortHomeCategory = mutableListOf<HomeCategory>()
-       viewModelScope.launch {
+        viewModelScope.launch {
             _homeCategoryFlow.collect() {
                 it.filter { (it.name == "포장") || (it.name == "1인분") }.also {
                     sortHomeCategory.addAll(it)
                 }
                 it.filter { (it.name != "포장") && (it.name != "1인분") }.also {
-                     sortHomeCategory.addAll(it)
+                    sortHomeCategory.addAll(it)
                 }
                 _sortHomeCategoryFlow.emit(sortHomeCategory)
             }
         }
-
-
 
 
     }
@@ -94,14 +85,7 @@ class HomeViewModel @Inject constructor(
     private fun refreshHomeCategory() {
         viewModelScope.launch {
             storeRepository.getHomeCategory().apply {
-                if (this.body()?.isSuccess == true)
-                    body()?.result?.apply {
-                        this.map {
-                            StoreConverter.toHomeCategory(it)
-                        }.run {
-                            _homeCategoryFlow.emit(this)
-                        }
-                    }
+                _homeCategoryFlow.emit(this)
             }
         }
 
@@ -116,18 +100,11 @@ class HomeViewModel @Inject constructor(
     fun refreshEvent() {
         viewModelScope.launch {
             eventRepository.getEvent().apply {
-                if (this.body()?.isSuccess == true)
-                    body()?.result?.apply {
-                        this.map {
-                            EventConverter.toEvent(it)
-                        }.run {
-                            _eventFlow.emit(this)
-                        }
-                    }
+                _eventFlow.emit(this)
             }
         }
-
     }
+
 
     fun refreshPickStore() {
         viewModelScope.launch {
@@ -138,14 +115,7 @@ class HomeViewModel @Inject constructor(
                 )
             )
                 .apply {
-                    if (this.body()?.isSuccess == true)
-                        body()?.result?.apply {
-                            this.map {
-                                StoreConverter.toStore(it)
-                            }.run {
-                                _pickStoreListFlow.emit(this)
-                            }
-                        }
+                    _pickStoreListFlow.emit(this)
                 }
         }
     }
