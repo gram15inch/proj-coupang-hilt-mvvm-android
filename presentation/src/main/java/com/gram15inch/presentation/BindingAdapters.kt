@@ -5,10 +5,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.clone.mycoupang.domain.model.order.history.HistoryMenu
-import com.clone.mycoupang.domain.model.store.CartMenu
-import com.clone.mycoupang.domain.model.store.Store
-import com.clone.mycoupang.domain.model.store.home.HomeCategory
+import com.gram15inch.domain.model.order.history.HistoryMenu
+import com.gram15inch.domain.model.store.CartMenu
+import com.gram15inch.domain.model.store.Store
+import com.gram15inch.domain.model.store.home.HomeCategory
 import com.clone.mycoupang.domain.policy.LoginState
 import com.clone.mycoupang.domain.policy.toWonPayString
 import com.gram15inch.presentation.adapter.CartMenuAdapter

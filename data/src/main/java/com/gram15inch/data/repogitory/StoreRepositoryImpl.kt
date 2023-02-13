@@ -1,27 +1,45 @@
 package com.gram15inch.data.repogitory
 
-import com.clone.mycoupang.data.remote.StoreApiService
-import com.clone.mycoupang.data.remote.model.store.category.HomeCategoryResponse
-import com.clone.mycoupang.data.remote.model.store.detail.StoreDetailResponse
-import com.clone.mycoupang.data.remote.model.store.pick.PickStoreRequest
-import com.clone.mycoupang.data.remote.model.store.pick.PickStoreResponse
+import com.gram15inch.domain.model.store.Store
+import com.gram15inch.domain.model.store.StoreDetail
+import com.gram15inch.domain.model.store.home.HomeCategory
+import com.gram15inch.data.converter.StoreConverter
+import com.gram15inch.data.remote.StoreApiService
+import com.gram15inch.domain.model.store.pick.PickStoreRequest
 import com.gram15inch.domain.repository.StoreRepository
-import retrofit2.Response
 import javax.inject.Inject
 
 
 class StoreRepositoryImpl @Inject constructor (private val storeApiService: StoreApiService):
     StoreRepository {
 
-    override suspend fun getPickStore(request: PickStoreRequest): Response<PickStoreResponse> {
-        return storeApiService.getChooseStore(request.latitude,request.longitude)
+    override suspend fun getPickStore(request: PickStoreRequest): List<Store> {
+
+        storeApiService.getChooseStore(request.latitude,request.latitude).body().also {
+            return if (it?.isSuccess == true)
+                it.result?.map { remote -> StoreConverter.toStore(remote) }?: emptyList()
+            else
+                emptyList()
+        }
+
     }
-    override  suspend fun getHomeCategory(): Response<HomeCategoryResponse> {
-        return storeApiService.getHomeCategory()
+    override suspend fun getHomeCategory(): List<HomeCategory> {
+        storeApiService.getHomeCategory().body().also {
+            return if (it?.isSuccess == true)
+                it.result.map { remote -> StoreConverter.toHomeCategory(remote) }
+            else
+                emptyList()
+        }
     }
 
-    override  suspend fun getStoreDetail(id:Int):Response<StoreDetailResponse>{
-        return storeApiService.getStoreDetail(id)
+    override suspend fun getStoreDetail(id:Int): StoreDetail?{
+        storeApiService.getStoreDetail(id).body().also {
+            if (it?.isSuccess == true)
+                if (it.result != null)
+                    return StoreConverter.toStoreDetail(it.result)
+        }
+
+        return null
     }
 
 }

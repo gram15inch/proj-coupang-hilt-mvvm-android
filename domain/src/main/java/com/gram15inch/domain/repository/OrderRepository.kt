@@ -1,17 +1,15 @@
-package com.clone.mycoupang.domain.repository
+package com.gram15inch.domain.repository
 
-import com.clone.mycoupang.data.remote.OrderApiService
-import com.clone.mycoupang.data.remote.model.order.add.OrderAddResponse
-import com.clone.mycoupang.data.remote.model.order.add.request.OrderAddRequest
-import com.clone.mycoupang.data.remote.model.order.history.HistoryResponse
-import retrofit2.Response
-import javax.inject.Inject
+
+import com.gram15inch.domain.model.order.add.request.OrderAddRequest
+import com.gram15inch.domain.model.order.history.History
+import com.gram15inch.domain.model.order.history.OrderAdd
 
 
 interface OrderRepository{
-    suspend fun getHistory(userId:Int): Response<HistoryResponse>
+    suspend fun getHistory(userId:Int): List<History>
 
-    suspend fun postOrderAdd(storeId:Int, request: OrderAddRequest): Response<OrderAddResponse>
+    suspend fun postOrderAdd(storeId:Int, request: OrderAddRequest): OrderAdd?
 
 }
 

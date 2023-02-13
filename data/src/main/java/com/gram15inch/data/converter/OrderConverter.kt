@@ -1,13 +1,15 @@
 package com.gram15inch.data.converter
 
-import com.clone.mycoupang.data.remote.model.order.history.MnO
-import com.clone.mycoupang.data.remote.model.order.history.RemoteHistory
-import com.clone.mycoupang.domain.model.order.history.History
-import com.clone.mycoupang.domain.model.order.history.HistoryMenu
+import com.gram15inch.data.remote.model.order.history.MnO
+import com.gram15inch.data.remote.model.order.history.RemoteHistory
+import com.gram15inch.domain.model.order.history.History
+import com.gram15inch.domain.model.order.history.HistoryMenu
+import com.gram15inch.data.remote.model.order.add.RemoteOrderAdd
+import com.gram15inch.domain.model.order.history.OrderAdd
 
 object OrderConverter {
 
-    fun toHistory(remote:RemoteHistory ): History{
+    fun toHistory(remote: RemoteHistory): History {
         return History(
             remote.orderInfo.orderId,
             remote.orderInfo.storeName,
@@ -19,8 +21,15 @@ object OrderConverter {
             remote.mnO.map { toHistoryMenu(it) }
         )
     }
+    fun toOrderAdd(remote: RemoteOrderAdd): OrderAdd{
+        return OrderAdd(
+            remote.orderId
+        )
+    }
 
-    fun toHistoryMenu(remote:MnO):HistoryMenu{
+
+
+    fun toHistoryMenu(remote: MnO): HistoryMenu {
         return HistoryMenu(
             1, //todo 요청
             remote.menuName,

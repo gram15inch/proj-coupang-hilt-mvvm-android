@@ -1,4 +1,4 @@
-package com.clone.mycoupang.data.remote.model.store.detail
+package com.gram15inch.data.remote.model.store.detail
 
 data class RemoteStoreDetail(
     val categoryList: List<Category>,

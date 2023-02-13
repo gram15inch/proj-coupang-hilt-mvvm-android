@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.clone.mycoupang.domain.model.store.StoreCategory
-import com.clone.mycoupang.domain.model.store.StoreCategoryMenu
+import com.gram15inch.domain.model.store.StoreCategory
+import com.gram15inch.domain.model.store.StoreCategoryMenu
 import com.gram15inch.mycoupangeats.databinding.LayoutHolderStoreCategoryBinding
 
 class StoreCategoryAdapter(private val onItemClicked: (StoreCategoryMenu) -> Unit) :

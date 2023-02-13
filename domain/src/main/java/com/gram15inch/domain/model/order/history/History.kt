@@ -1,6 +1,4 @@
-package com.clone.mycoupang.domain.model.order.history
-
-import com.clone.mycoupang.domain.model.store.CartMenu
+package com.gram15inch.domain.model.order.history
 
 data class History(
     val id: Int,

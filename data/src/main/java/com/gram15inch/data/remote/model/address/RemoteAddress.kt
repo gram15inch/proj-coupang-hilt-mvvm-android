@@ -1,4 +1,4 @@
-package com.clone.mycoupang.data.remote.model.address
+package com.gram15inch.data.remote.model.address
 
 data class RemoteAddress(
     val addressId: Int,
@@ -6,3 +6,4 @@ data class RemoteAddress(
     val detail: String,
     val name: String
 )
+

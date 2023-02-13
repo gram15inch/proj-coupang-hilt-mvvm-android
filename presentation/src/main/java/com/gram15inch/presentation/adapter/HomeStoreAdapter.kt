@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.GlideException
-import com.clone.mycoupang.domain.model.store.Store
+import com.gram15inch.domain.model.store.Store
 import com.gram15inch.mycoupangeats.R
 import com.gram15inch.mycoupangeats.databinding.LayoutHolderHomeStoreBinding
 import kotlinx.coroutines.CoroutineScope

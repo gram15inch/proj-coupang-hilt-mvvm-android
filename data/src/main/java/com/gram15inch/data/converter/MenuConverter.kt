@@ -1,8 +1,8 @@
 package com.gram15inch.data.converter
 
-import com.clone.mycoupang.data.remote.model.menu.Menulist
-import com.clone.mycoupang.data.remote.model.menu.Opt
-import com.clone.mycoupang.data.remote.model.menu.RemoteMenuDetail
+import com.gram15inch.data.remote.model.menu.Menulist
+import com.gram15inch.data.remote.model.menu.Opt
+import com.gram15inch.data.remote.model.menu.RemoteMenuDetail
 import com.gram15inch.domain.model.menu.MenuDetail
 import com.gram15inch.domain.model.menu.MenuType
 import com.gram15inch.domain.model.menu.MenuTypeOption

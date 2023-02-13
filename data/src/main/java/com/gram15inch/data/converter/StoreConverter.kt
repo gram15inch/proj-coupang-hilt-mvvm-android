@@ -1,12 +1,12 @@
 package com.gram15inch.data.converter
 
-import com.clone.mycoupang.data.remote.model.store.category.RemoteHomeCategory
-import com.clone.mycoupang.data.remote.model.store.detail.Category
-import com.clone.mycoupang.data.remote.model.store.detail.Menu
-import com.clone.mycoupang.data.remote.model.store.detail.RemoteStoreDetail
-import com.clone.mycoupang.data.remote.model.store.pick.RemotePickStore
-import com.clone.mycoupang.domain.model.store.*
-import com.clone.mycoupang.domain.model.store.home.HomeCategory
+import com.gram15inch.data.remote.model.store.category.RemoteHomeCategory
+import com.gram15inch.data.remote.model.store.detail.Category
+import com.gram15inch.data.remote.model.store.detail.Menu
+import com.gram15inch.data.remote.model.store.detail.RemoteStoreDetail
+import com.gram15inch.data.remote.model.store.pick.RemotePickStore
+import com.gram15inch.domain.model.store.*
+import com.gram15inch.domain.model.store.home.HomeCategory
 
 
 object StoreConverter {
@@ -90,11 +90,13 @@ object StoreConverter {
     )
 
     var hcIdx=0
-    fun toHomeCategory(remote:RemoteHomeCategory):HomeCategory{
+    fun toHomeCategory(remote: RemoteHomeCategory): HomeCategory {
         return HomeCategory(
             hcIdx++, //todo 요청하기
            remote.categoryImg,
            remote.categoryName
         )
     }
+
+
 }

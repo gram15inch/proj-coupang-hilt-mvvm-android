@@ -1,7 +1,7 @@
 package com.gram15inch.data.converter
 
-import com.clone.mycoupang.data.remote.model.pay.RemotePay
-import com.clone.mycoupang.domain.model.pay.Pay
+import com.gram15inch.data.remote.model.pay.RemotePay
+import com.gram15inch.domain.model.pay.Pay
 
 
 /*
@@ -36,13 +36,15 @@ object PayConverter {
             )
         }
         remote.userCouPayMoney.also {
-            payList.add(Pay(0,
+            payList.add(
+                Pay(0,
                 "",
                 "",
                 "COUPAY",
                 "",
                 it
-            ))
+            )
+            )
         }
         return payList
     }

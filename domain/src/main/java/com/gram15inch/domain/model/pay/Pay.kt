@@ -1,4 +1,4 @@
-package com.clone.mycoupang.domain.model.pay
+package com.gram15inch.domain.model.pay
 
 
 /*

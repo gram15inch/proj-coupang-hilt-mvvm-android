@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.clone.mycoupang.domain.model.store.home.HomeCategory
+import com.gram15inch.domain.model.store.home.HomeCategory
 import com.gram15inch.mycoupangeats.R
 import com.gram15inch.mycoupangeats.databinding.LayoutHolderHomeCategoryBinding
 

@@ -1,4 +1,8 @@
-package com.clone.mycoupang.data.remote.model.store.pick
+package com.gram15inch.data.remote.model.store.pick
+
+import com.gram15inch.data.remote.model.store.pick.BusinessHourInfos
+import com.gram15inch.data.remote.model.store.pick.Flags
+import com.gram15inch.data.remote.model.store.pick.MaxCouponInfos
 
 data class RemotePickStore(
     val avgScore: Double,

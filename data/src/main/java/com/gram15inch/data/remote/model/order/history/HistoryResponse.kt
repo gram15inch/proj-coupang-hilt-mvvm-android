@@ -1,4 +1,4 @@
-package com.clone.mycoupang.data.remote.model.order.history
+package com.gram15inch.data.remote.model.order.history
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

@@ -1,4 +1,4 @@
-package com.clone.mycoupang.data.remote.model.event
+package com.gram15inch.data.remote.model.event
 
 import com.squareup.moshi.JsonClass
 

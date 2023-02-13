@@ -1,4 +1,4 @@
-package com.clone.mycoupang.data.remote.model.pay
+package com.gram15inch.data.remote.model.pay
 
 data class Account(
     val bankLogoImage: String,

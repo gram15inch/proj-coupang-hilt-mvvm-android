@@ -17,7 +17,6 @@ import javax.inject.Inject
 @HiltViewModel
 class SignUpViewModel @Inject constructor(private val userRepository: UserRepository) :
     ErrorHandleViewModel() {
-    var userCount =20
     var email = MutableStateFlow("")
     var password = MutableStateFlow("")
     var userName = MutableStateFlow("")
@@ -27,17 +26,6 @@ class SignUpViewModel @Inject constructor(private val userRepository: UserReposi
     private val _signUpState = MutableStateFlow(SignUpState.NONE)
     val signUpState get() = _signUpState.asLiveData()
 
-    init {
-        userCount = MyApplication.prefs.getString("userCount","0").toInt()
-    }
-    private fun testUserInput(){
-        userCount++
-        email.value ="abcdq$userCount@abcd.com"
-        password.value ="abcd123QWE@#$userCount"
-        userName.value ="name$userCount"
-        phone.value ="0109876000$userCount"
-        terms.value =1
-    }
     fun signUp() {
        // testUserInput()
         viewModelScope.launch {

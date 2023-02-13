@@ -1,7 +1,7 @@
-package com.clone.mycoupang.domain.model.store
+package com.gram15inch.domain.model.store
 
-import com.clone.mycoupang.domain.model.store.DomainCategory
-import com.clone.mycoupang.domain.model.store.StoreCategory
+import com.gram15inch.domain.model.store.DomainCategory
+import com.gram15inch.domain.model.store.StoreCategory
 
 data class StoreDetail(
     val id: Int,

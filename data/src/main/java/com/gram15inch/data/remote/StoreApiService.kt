@@ -1,8 +1,8 @@
-package com.clone.mycoupang.data.remote
+package com.gram15inch.data.remote
 
-import com.clone.mycoupang.data.remote.model.store.category.HomeCategoryResponse
-import com.clone.mycoupang.data.remote.model.store.detail.StoreDetailResponse
-import com.clone.mycoupang.data.remote.model.store.pick.PickStoreResponse
+import com.gram15inch.data.remote.model.store.category.HomeCategoryResponse
+import com.gram15inch.data.remote.model.store.detail.StoreDetailResponse
+import com.gram15inch.data.remote.model.store.pick.PickStoreResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

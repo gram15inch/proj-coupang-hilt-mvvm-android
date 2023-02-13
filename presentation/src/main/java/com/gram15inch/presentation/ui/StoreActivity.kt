@@ -7,7 +7,7 @@ import androidx.activity.viewModels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.asLiveData
 import androidx.viewpager2.widget.ViewPager2
-import com.clone.mycoupang.domain.model.store.StoreDetail
+import com.gram15inch.domain.model.store.StoreDetail
 import com.clone.mycoupang.domain.policy.COUPAY_SAVE_RATE
 import com.clone.mycoupang.domain.policy.calculateCartPrice
 import com.clone.mycoupang.domain.policy.toWonPayString

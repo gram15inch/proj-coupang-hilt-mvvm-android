@@ -1,4 +1,4 @@
-package com.clone.mycoupang.data.remote.model.order.add.request
+package com.gram15inch.domain.model.order.add.request
 
 data class Menu(
     val count: Int,

@@ -4,9 +4,9 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.gram15inch.presentation.base.ErrorHandleViewModel
 import com.gram15inch.data.converter.OrderConverter
-import com.clone.mycoupang.domain.model.order.history.History
-import com.clone.mycoupang.domain.model.order.history.HistoryMenu
-import com.clone.mycoupang.domain.repository.OrderRepository
+import com.gram15inch.domain.model.order.history.History
+import com.gram15inch.domain.model.order.history.HistoryMenu
+import com.gram15inch.domain.repository.OrderRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch

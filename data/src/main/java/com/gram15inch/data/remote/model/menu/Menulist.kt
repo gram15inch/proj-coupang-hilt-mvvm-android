@@ -1,4 +1,4 @@
-package com.clone.mycoupang.data.remote.model.menu
+package com.gram15inch.data.remote.model.menu
 
 data class Menulist(
     val categoryName: String,

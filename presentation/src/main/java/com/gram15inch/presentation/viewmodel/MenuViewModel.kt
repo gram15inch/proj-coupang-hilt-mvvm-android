@@ -5,7 +5,7 @@ import com.gram15inch.presentation.base.ErrorHandleViewModel
 import com.gram15inch.data.converter.MenuConverter
 import com.gram15inch.domain.model.menu.MenuDetail
 import com.gram15inch.domain.model.menu.SelectedMenuType
-import com.clone.mycoupang.domain.model.store.CartMenu
+import com.gram15inch.domain.model.store.CartMenu
 import com.clone.mycoupang.domain.policy.calculateCartMenuPrice
 import com.gram15inch.domain.repository.CartRepository
 import com.gram15inch.domain.repository.MenuRepository

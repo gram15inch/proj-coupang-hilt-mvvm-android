@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.clone.mycoupang.domain.model.order.history.HistoryMenu
+import com.gram15inch.domain.model.order.history.HistoryMenu
 import com.gram15inch.mycoupangeats.databinding.LayoutHolderHistoryMenuBinding
 
 class HistoryMenuAdapter :

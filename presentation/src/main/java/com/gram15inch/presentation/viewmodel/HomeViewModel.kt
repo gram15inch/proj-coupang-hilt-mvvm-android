@@ -4,12 +4,12 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.viewpager2.widget.ViewPager2
 import com.gram15inch.presentation.base.ErrorHandleViewModel
-import com.clone.mycoupang.data.remote.model.store.pick.PickStoreRequest
+import com.gram15inch.data.remote.model.store.pick.PickStoreRequest
 import com.gram15inch.data.converter.EventConverter
 import com.gram15inch.data.converter.StoreConverter
 import com.gram15inch.domain.model.event.Event
-import com.clone.mycoupang.domain.model.store.Store
-import com.clone.mycoupang.domain.model.store.home.HomeCategory
+import com.gram15inch.domain.model.store.Store
+import com.gram15inch.domain.model.store.home.HomeCategory
 import com.gram15inch.domain.repository.AddressRepository
 import com.gram15inch.domain.repository.EventRepository
 import com.gram15inch.domain.repository.StoreRepository

@@ -1,4 +1,4 @@
-package com.clone.mycoupang.domain.model.store
+package com.gram15inch.domain.model.store
 
 data class StoreCategory(
     val id: Int,

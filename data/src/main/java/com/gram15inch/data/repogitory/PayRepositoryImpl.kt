@@ -1,14 +1,22 @@
 package com.gram15inch.data.repogitory
 
-import com.clone.mycoupang.data.remote.PayApiService
-import com.clone.mycoupang.data.remote.model.pay.PayResponse
+import com.gram15inch.domain.model.pay.Pay
+import com.gram15inch.data.converter.PayConverter
+import com.gram15inch.data.remote.PayApiService
 import com.gram15inch.domain.repository.PayRepository
-import retrofit2.Response
 import javax.inject.Inject
 
 
-class PayRepositoryImpl @Inject constructor (val payApiService: PayApiService): PayRepository {
-    override suspend fun getPayments(): Response<PayResponse> {
-        return payApiService.getPayments()
+class PayRepositoryImpl @Inject constructor (private val payApiService: PayApiService)
+    : PayRepository {
+    override suspend fun getPayments(): List<Pay> {
+
+        payApiService.getPayments().body().also {
+            return if (it?.isSuccess == true)
+                PayConverter.toPay(it.result)
+            else
+                emptyList()
+        }
+
     }
 }

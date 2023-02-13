@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.clone.mycoupang.domain.model.store.CartMenu
+import com.gram15inch.domain.model.store.CartMenu
 import com.clone.mycoupang.domain.policy.calculateCartPrice
 import com.gram15inch.mycoupangeats.databinding.LayoutHolderCartMenuBinding
 import java.text.DecimalFormat

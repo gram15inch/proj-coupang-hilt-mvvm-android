@@ -1,4 +1,6 @@
-package com.clone.mycoupang.data.remote.model.order.add.request
+package com.gram15inch.domain.model.order.add.request
+
+import com.gram15inch.domain.model.order.add.request.Menu
 
 data class OrderAddRequest(
     val addressId: Int,

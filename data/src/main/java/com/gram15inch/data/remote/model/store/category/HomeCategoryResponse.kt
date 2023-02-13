@@ -1,4 +1,4 @@
-package com.clone.mycoupang.data.remote.model.store.category
+package com.gram15inch.data.remote.model.store.category
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

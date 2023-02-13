@@ -1,6 +1,6 @@
-package com.clone.mycoupang.data.remote
+package com.gram15inch.data.remote
 
-import com.clone.mycoupang.data.remote.model.event.EventResponse
+import com.gram15inch.data.remote.model.event.EventResponse
 import retrofit2.Response
 import retrofit2.http.GET
 

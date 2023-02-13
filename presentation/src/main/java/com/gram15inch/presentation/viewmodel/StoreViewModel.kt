@@ -5,8 +5,8 @@ import androidx.lifecycle.viewModelScope
 import androidx.viewpager2.widget.ViewPager2
 import com.gram15inch.presentation.base.ErrorHandleViewModel
 import com.gram15inch.data.converter.StoreConverter
-import com.clone.mycoupang.domain.model.store.CartMenu
-import com.clone.mycoupang.domain.model.store.StoreDetail
+import com.gram15inch.domain.model.store.CartMenu
+import com.gram15inch.domain.model.store.StoreDetail
 import com.gram15inch.domain.repository.CartRepository
 import com.gram15inch.domain.repository.StoreRepository
 import dagger.hilt.android.lifecycle.HiltViewModel

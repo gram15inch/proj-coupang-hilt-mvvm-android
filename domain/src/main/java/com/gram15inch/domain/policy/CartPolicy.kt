@@ -2,7 +2,7 @@ package com.clone.mycoupang.domain.policy
 
 import android.annotation.SuppressLint
 import com.gram15inch.domain.model.menu.MenuType
-import com.clone.mycoupang.domain.model.store.CartMenu
+import com.gram15inch.domain.model.store.CartMenu
 
 fun calculateCartMenuPrice(
     menuPrice: Int,

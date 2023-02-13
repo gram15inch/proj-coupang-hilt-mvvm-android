@@ -1,17 +1,18 @@
 package com.gram15inch.data.repogitory
 
-import com.clone.mycoupang.data.remote.UserApiService
-import com.clone.mycoupang.data.remote.model.user.LoginRequest
-import com.clone.mycoupang.data.remote.model.user.LoginResponse
-import com.clone.mycoupang.data.remote.model.user.SignUpRequest
-import com.clone.mycoupang.data.remote.model.user.SignUpResponse
+import com.gram15inch.data.remote.UserApiService
+
+import com.gram15inch.data.remote.model.user.LoginResponse
+import com.gram15inch.data.remote.model.user.SignUpResponse
+import com.gram15inch.domain.model.user.LoginRequest
+import com.gram15inch.domain.model.user.SignUpRequest
 import com.gram15inch.domain.repository.UserRepository
 import retrofit2.Response
 import javax.inject.Inject
 
 class UserRepositoryImpl @Inject constructor(private val userApiService: UserApiService) :
     UserRepository {
-
+// todo 여기부터
    override suspend fun postLogin(request: LoginRequest): Response<LoginResponse> {
         return userApiService.postLogin(request)
     }

@@ -1,8 +1,7 @@
 package com.gram15inch.domain.repository
 
-import com.clone.mycoupang.domain.model.store.CartMenu
-import com.clone.mycoupang.domain.model.store.StoreDetail
-import javax.inject.Inject
+import com.gram15inch.domain.model.store.CartMenu
+import com.gram15inch.domain.model.store.StoreDetail
 
 
 interface CartRepository {

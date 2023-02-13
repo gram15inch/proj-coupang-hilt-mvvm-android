@@ -9,7 +9,7 @@ import androidx.lifecycle.asLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.clone.mycoupang.domain.model.store.Store
+import com.gram15inch.domain.model.store.Store
 import com.gram15inch.presentation.viewmodel.HomeViewModel
 import com.gram15inch.mycoupangeats.R
 import com.gram15inch.mycoupangeats.databinding.FragmentHomeBinding

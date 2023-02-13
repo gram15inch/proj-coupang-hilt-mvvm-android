@@ -1,4 +1,4 @@
-package com.clone.mycoupang.data.remote.model.store.category
+package com.gram15inch.data.remote.model.store.category
 
 data class RemoteHomeCategory(
     val categoryImg: String,

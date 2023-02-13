@@ -1,4 +1,4 @@
-package com.clone.mycoupang.data.remote.model.pay
+package com.gram15inch.data.remote.model.pay
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

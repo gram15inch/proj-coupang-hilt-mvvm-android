@@ -1,4 +1,4 @@
-package com.clone.mycoupang.data.remote.model.order.history
+package com.gram15inch.data.remote.model.order.history
 
 data class OrderInfo(
     val address: String,

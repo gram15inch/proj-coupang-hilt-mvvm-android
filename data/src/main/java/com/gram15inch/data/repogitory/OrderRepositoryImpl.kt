@@ -1,21 +1,34 @@
 package com.gram15inch.data.repogitory
 
-import com.clone.mycoupang.data.remote.OrderApiService
-import com.clone.mycoupang.data.remote.model.order.add.OrderAddResponse
-import com.clone.mycoupang.data.remote.model.order.add.request.OrderAddRequest
-import com.clone.mycoupang.data.remote.model.order.history.HistoryResponse
-import com.clone.mycoupang.domain.repository.OrderRepository
-import retrofit2.Response
+import com.gram15inch.domain.model.order.history.History
+import com.gram15inch.data.converter.OrderConverter
+import com.gram15inch.data.remote.OrderApiService
+import com.gram15inch.domain.model.order.add.request.OrderAddRequest
+import com.gram15inch.domain.model.order.history.OrderAdd
+import com.gram15inch.domain.repository.OrderRepository
 import javax.inject.Inject
 
-class OrderRepositoryImpl @Inject constructor (private val orderApiService: OrderApiService):
+class OrderRepositoryImpl @Inject constructor(private val orderApiService: OrderApiService) :
     OrderRepository {
 
-    override suspend fun getHistory(userId:Int): Response<HistoryResponse> {
-        return orderApiService.getHistory(userId)
+    override suspend fun getHistory(userId: Int): List<History> {
+        orderApiService.getHistory(userId).body().also {
+            if (it?.isSuccess == true)
+                return it.result.map { remote -> OrderConverter.toHistory(remote) }
+            else
+                return emptyList()
+        }
     }
-    override  suspend fun postOrderAdd(storeId:Int, request: OrderAddRequest): Response<OrderAddResponse> {
-        return orderApiService.postOrderAdd(storeId,request)
+
+    override suspend fun postOrderAdd(storeId: Int, request: OrderAddRequest): OrderAdd? {
+
+        orderApiService.postOrderAdd(storeId, request).body().also {
+            if (it?.isSuccess == true)
+                if (it.result != null)
+                    return OrderConverter.toOrderAdd(it.result)
+        }
+
+        return null
     }
 
 }

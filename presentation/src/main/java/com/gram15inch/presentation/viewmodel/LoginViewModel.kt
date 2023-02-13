@@ -2,7 +2,7 @@ package com.gram15inch.presentation.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.clone.mycoupang.data.remote.model.user.LoginRequest
+import com.gram15inch.domain.model.user.LoginRequest
 import com.clone.mycoupang.domain.policy.LoginState
 import com.clone.mycoupang.domain.policy.verifyEmail
 import com.clone.mycoupang.domain.policy.verifyPassword
