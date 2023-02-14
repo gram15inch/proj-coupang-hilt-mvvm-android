@@ -11,10 +11,10 @@ object Versions {
     const val VERSION_NAME = "1.0" //
 
 
-    const val KOTLIN_VERSION = "1.9.0" //
+    const val KOTLIN_VERSION = "1.7.0" //
     const val KOTLINX_COROUTINES = "1.6.1"
     const val BUILD_GRADLE = "4.2.1"
-    const val CORE_KTX = "1.9.0"
+    const val CORE_KTX = "1.7.0"
     const val APP_COMPAT = "1.6.1"
     const val ACTIVITY_KTX = "1.2.3"
     const val FRAGMENT_KTX = "1.3.4"

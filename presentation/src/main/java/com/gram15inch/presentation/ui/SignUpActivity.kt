@@ -68,7 +68,6 @@ class SignUpActivity : DataBindingActivity<ActivitySignUpBinding>(R.layout.activ
         viewModel.signUpState.observe(this) {
             when (it) {
                 SignUpState.SUCCESS -> {
-                    MyCoupangEatsApplication.prefs.setString("userCount","${viewModel.userCount}")
                    // showToast("회원가입 성공 jwt: ${MyApplication.prefs.getString(X_ACCESS_TOKEN,"")}")
                     finish()
 

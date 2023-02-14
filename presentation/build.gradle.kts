@@ -28,7 +28,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments["dagger.hilt.disableModulesHaveInstallInCheck"]="true"
+                argument("dagger.hilt.disableModulesHaveInstallInCheck","true")
             }
         }
         testInstrumentationRunnerArguments["runnerBuilder"] = "de.mannodermaus.junit5.AndroidJUnit5Builder"
@@ -46,11 +46,11 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
     buildFeatures {
         viewBinding = true
@@ -109,7 +109,6 @@ dependencies {
     testImplementation(Libraries.MOCKK)
 
     // junit5
-    //testImplementation (UnitTest.JUNIT_JUPITER_API)
     testImplementation (UnitTest.JUNIT_JUPITER_API)
     testRuntimeOnly (UnitTest.JUNIT_JUPITER_ENGINE)
     testImplementation (UnitTest.JUNIT_JUPITER_PARAMS)

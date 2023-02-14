@@ -20,12 +20,11 @@ android {
 
     defaultConfig {
         minSdk = 31
-        targetSdk = 33
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments["dagger.hilt.disableModulesHaveInstallInCheck"]="true"
+                argument("dagger.hilt.disableModulesHaveInstallInCheck","true")
             }
         }
         consumerProguardFiles("consumer-rules.pro")
@@ -41,11 +40,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 }
 
@@ -58,19 +57,8 @@ dependencies {
     implementation(Google.HILT_ANDROID)
     kapt (Google.HILT_COMPILER)
 
-    //hilt test
-    // For Robolectric tests.
-    testImplementation (Google.HILT_ANDROID_TESTING)
-    // ...with Kotlin.
-    kaptTest (Google.HILT_ANDROID_COMPILER)
-    // For instrumented tests.
-    androidTestImplementation (Google.HILT_ANDROID_TESTING)
-    // ...with Kotlin.
-    kaptAndroidTest (Google.HILT_ANDROID_COMPILER)
-    testImplementation(Libraries.MOCKK)
 
 
-    // ****** network ******
 
     // retrofit for networking
     implementation (Libraries.RETROFIT)
@@ -86,9 +74,9 @@ dependencies {
     kapt(Libraries.MOSHI_CODEGEN)
 
 
-    // https://github.com/square/okhttp
+
     implementation (Libraries.OKHTTP)
-    // https://github.com/square/okhttp/tree/master/okhttp-logging-interceptor
+
     implementation (Libraries.OKHTTP_LOGGING_INTERCEPTOR)
 
     //coroutine

@@ -3,10 +3,11 @@ package com.gram15inch.presentation.viewmodel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.viewpager2.widget.ViewPager2
-import com.gram15inch.data.remote.model.store.pick.PickStoreRequest
+
 import com.gram15inch.domain.model.event.Event
 import com.gram15inch.domain.model.store.detail.Store
 import com.gram15inch.domain.model.store.home.HomeCategory
+import com.gram15inch.domain.model.store.pick.PickStoreRequest
 import com.gram15inch.domain.repository.EventRepository
 import com.gram15inch.domain.repository.StoreRepository
 import com.gram15inch.presentation.base.ErrorHandleViewModel

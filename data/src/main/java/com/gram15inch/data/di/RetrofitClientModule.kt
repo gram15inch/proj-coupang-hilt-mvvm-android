@@ -3,7 +3,7 @@ package com.gram15inch.data.di
 
 
 import com.clone.mycoupang.data.NullToEmptyStringAdapter
-import com.clone.mycoupang.data.XAccessTokenInterceptor
+import com.gram15inch.data.XAccessTokenInterceptor
 import com.clone.mycoupang.data.remote.*
 import com.gram15inch.data.remote.*
 import com.gram15inch.data.repogitory.CartRepositoryImpl

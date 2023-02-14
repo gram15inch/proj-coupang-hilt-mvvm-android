@@ -3,7 +3,7 @@ package com.gram15inch.data.repogitory
 import com.gram15inch.domain.model.order.history.History
 import com.gram15inch.data.converter.OrderConverter
 import com.gram15inch.data.remote.OrderApiService
-import com.gram15inch.domain.model.order.add.request.OrderAddRequest
+import com.gram15inch.domain.model.order.add.OrderAddRequest
 import com.gram15inch.domain.model.order.history.OrderAdd
 import com.gram15inch.domain.repository.OrderRepository
 import javax.inject.Inject

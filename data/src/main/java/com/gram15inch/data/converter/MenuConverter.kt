@@ -30,15 +30,6 @@ object MenuConverter {
         )
     }
 
-    fun toMenuType(remote: SelectedMenuType): MenuType {
-        return  MenuType(
-            remote.id,
-            remote.Name,
-            remote.multiple,
-            remote.necessary,
-            remote.optList.value
-        )
-    }
     fun toMenuTypeOption(remote: Opt): MenuTypeOption {
         return MenuTypeOption(
             id = remote.optId,
