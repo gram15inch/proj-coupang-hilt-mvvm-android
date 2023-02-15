@@ -1,6 +1,5 @@
 package com.gram15inch.data.remote.model.user
 
-import com.clone.mycoupang.data.remote.model.user.RemoteSignUp
 import com.squareup.moshi.Json
 
 data class SignUpResponse(

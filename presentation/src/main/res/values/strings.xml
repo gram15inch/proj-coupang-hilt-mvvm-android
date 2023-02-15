@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyCoupang</string>
+    <string name="app_name">MyCoupangEats</string>
     <string name="sign_up_str">회원가입</string>
     <string name="input_user_info_str">회원정보를 입력해주세요</string>
     <string name="sign_up_terms_title_all_str">모두 확인하였으며 동의합니다.</string>

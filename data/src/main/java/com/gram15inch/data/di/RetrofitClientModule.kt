@@ -60,6 +60,7 @@ object RetrofitClientModule {
             .build()
     }
 
+    
     @Provides
     fun provideUserApiService(retrofit: Retrofit): UserApiService {
         return retrofit.create(UserApiService::class.java)
@@ -92,12 +93,6 @@ object RetrofitClientModule {
     @Provides
     fun provideOrderApiService(retrofit: Retrofit): OrderApiService {
         return  retrofit.create(OrderApiService::class.java)
-    }
-
-    @Singleton
-    @Provides
-    fun provideCartDataSource(): CartRepository {
-        return CartRepositoryImpl()
     }
 
 

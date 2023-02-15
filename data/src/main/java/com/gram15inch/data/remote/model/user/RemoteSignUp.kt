@@ -1,4 +1,4 @@
-package com.clone.mycoupang.data.remote.model.user
+package com.gram15inch.data.remote.model.user
 
 data class RemoteSignUp(
     val jwt: String,
