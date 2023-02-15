@@ -6,19 +6,22 @@
 
 ## 스크린샷
 <div>
-<img src="https://user-images.githubusercontent.com/94951889/218974234-8c3f455b-5cbc-4570-bc43-58202203ad97.png"  width="208" height="416">
- <img src="https://user-images.githubusercontent.com/94951889/218974252-3ea16604-51c9-48a9-8a6d-da3596a789bc.png"  width="208" height="416">
-<img src="https://user-images.githubusercontent.com/94951889/218974255-8cbfa4be-0b69-47c4-9b1e-af3a240b9bd0.png"  width="208" height="416">
+<img src="https://user-images.githubusercontent.com/94951889/218974234-8c3f455b-5cbc-4570-bc43-58202203ad97.png"  width="195" height="390">
+ <img src="https://user-images.githubusercontent.com/94951889/218974252-3ea16604-51c9-48a9-8a6d-da3596a789bc.png"  width="195" height="390">
+<img src="https://user-images.githubusercontent.com/94951889/218974255-8cbfa4be-0b69-47c4-9b1e-af3a240b9bd0.png"  width="195" height="390">
+ <img src="https://user-images.githubusercontent.com/94951889/218974257-4fdf5eaa-a755-4a3c-865f-501ed5fda3a1.png"  width="195" height="390">
+   <img src="https://user-images.githubusercontent.com/94951889/218974261-ebf5f0dd-0b1c-4671-be11-e9d69b4dd38f.png"  width="195" height="390">
 </div>
 <div>
- <img src="https://user-images.githubusercontent.com/94951889/218974257-4fdf5eaa-a755-4a3c-865f-501ed5fda3a1.png"  width="208" height="416">
-  <img src="https://user-images.githubusercontent.com/94951889/218974261-ebf5f0dd-0b1c-4671-be11-e9d69b4dd38f.png"  width="208" height="416">
-   <img src="https://user-images.githubusercontent.com/94951889/218974266-5c0af7c0-a802-4645-b651-f4692dfa891a.png"  width="208" height="416">
+   <img src="https://user-images.githubusercontent.com/94951889/218974266-5c0af7c0-a802-4645-b651-f4692dfa891a.png"  width="195" height="390">
+   <img src="https://user-images.githubusercontent.com/94951889/218974271-a8afb3b3-1445-474f-9daa-5e6fb1021bea.png"  width="195" height="390">
+    <img src="https://user-images.githubusercontent.com/94951889/218974275-4266aac5-d471-49ea-9014-b34592c5f8bb.png"  width="195" height="390">
+ <img src="https://user-images.githubusercontent.com/94951889/218974277-e5a4f385-7485-4ef6-b2c3-592ec4583809.png"  width="195" height="390">
+<img src="https://user-images.githubusercontent.com/94951889/218974279-2286a0ca-7d9d-48d6-8195-3e1f573cff3c.png"  width="195" height="390">
+
  </div>
  <div>
-<img src="https://user-images.githubusercontent.com/94951889/218974271-a8afb3b3-1445-474f-9daa-5e6fb1021bea.png"  width="208" height="416">
-<img src="https://user-images.githubusercontent.com/94951889/218974277-e5a4f385-7485-4ef6-b2c3-592ec4583809.png"  width="208" height="416">
-<img src="https://user-images.githubusercontent.com/94951889/218974279-2286a0ca-7d9d-48d6-8195-3e1f573cff3c.png"  width="208" height="416">
+
 </div>
 
 ## 구현 영상
