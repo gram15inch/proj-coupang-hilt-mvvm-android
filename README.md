@@ -25,6 +25,7 @@ https://drive.google.com/file/d/1c3oUIk6y5szbaey2DMie-__O0hhCHht-/view?usp=share
 - Databinding, Viewbinding
 - Retrofit2
 - Junit5
+- Gradle, BuildSrc
 
 ## 서버 api 
 * 로그인 
