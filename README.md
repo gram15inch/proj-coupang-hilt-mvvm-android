@@ -19,6 +19,13 @@
 ## 구현 영상
 https://drive.google.com/file/d/1c3oUIk6y5szbaey2DMie-__O0hhCHht-/view?usp=share_link
 
+## 개발 기술
+- Mvvm, Clean Architecture
+- hilt, dagger
+- databinding, viewbinding
+- retrofit2
+- Junit5
+
 ## 서버 api 
 * 로그인 
 * 회원가입
