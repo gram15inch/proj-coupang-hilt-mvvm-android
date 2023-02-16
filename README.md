@@ -21,9 +21,9 @@ https://drive.google.com/file/d/1c3oUIk6y5szbaey2DMie-__O0hhCHht-/view?usp=share
 
 ## 개발 기술
 - Mvvm, Clean Architecture
-- hilt, dagger
-- databinding, viewbinding
-- retrofit2
+- Hilt, Dagger
+- Databinding, Viewbinding
+- Retrofit2
 - Junit5
 
 ## 서버 api 
