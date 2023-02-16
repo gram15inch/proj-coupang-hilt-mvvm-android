@@ -43,16 +43,17 @@ https://drive.google.com/file/d/1c3oUIk6y5szbaey2DMie-__O0hhCHht-/view?usp=share
 * 주문 내역
 * 이벤트 배너
 
-## 리팩토링 일지
+# 리팩토링 일지
 
 ### 앱을 3개의 계층으로 나눠 각각의 모듈로 생성 (presentaion, domain, data)
     이유) 리팩토링을 위해 앱을 변경시킬때 빌드속도를 높이고 계층별로 필요한 추가/수정할 부분에 그곳에만 집중하기위해
+ ### Groovy DSL to Kotlin DSL
+    이유) 컴파일 타임 오류확인, BuildSrc를 사용하기 위해
 ### 모듈별 버전을 한번에 관리할 BuildSrc를 도입
     이유) 버전을 변경할때 앱의 한곳에서 변경하기위함과 사용하는 라이브러리를 한번에 파악하기 위해
 ### presntaion, data가 domain 한곳에만 의존하도록 변경
     이유) domain로직, 즉 앱의 개발방향이 변경되지 않는한 presntaion, data가 변경의 영향을 받지 않기 위해
-### Groovy DSL to Kotlin DSL
-    이유) 컴파일 타임 오류확인, BuildSrc를 사용하기 위해
+
 
 # 개발 일지
 
