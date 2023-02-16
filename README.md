@@ -52,7 +52,7 @@ https://drive.google.com/file/d/1c3oUIk6y5szbaey2DMie-__O0hhCHht-/view?usp=share
 ### 모듈별 버전을 한번에 관리할 BuildSrc를 도입
     이유) 버전을 변경할때 앱의 한곳에서 변경하기위함과 사용하는 라이브러리를 한번에 파악하기 위해
 ### presentation, data가 domain 한곳에만 의존하도록 변경
-    이유) domain로직, 즉 앱의 개발방향이 변경되지 않는한 presntaion, data가 변경의 영향을 받지 않기 위해
+    이유) domain로직, 즉 앱의 개발방향이 변경되지 않는한 presentation, data가 변경의 영향을 받지 않기 위해
 
 
 # 개발 일지
