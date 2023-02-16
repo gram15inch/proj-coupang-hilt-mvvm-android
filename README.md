@@ -43,7 +43,7 @@ https://drive.google.com/file/d/1c3oUIk6y5szbaey2DMie-__O0hhCHht-/view?usp=share
 * 주문 내역
 * 이벤트 배너
 
-# 리팩토링 일지
+## 리팩토링 일지
 
 ### 앱을 3개의 계층으로 나눠 각각의 모듈로 생성 (presentaion, domain, data)
     이유) 리팩토링을 위해 앱을 변경시킬때 빌드속도를 높이고 계층별로 필요한 추가/수정할 부분에 그곳에만 집중하기위해
@@ -55,9 +55,9 @@ https://drive.google.com/file/d/1c3oUIk6y5szbaey2DMie-__O0hhCHht-/view?usp=share
     이유) domain로직, 즉 앱의 개발방향이 변경되지 않는한 presentation, data가 변경의 영향을 받지 않기 위해
 
 
-# 개발 일지
+## 개발 일지
 
-## 23-01-28 (토)
+### 23-01-28 (토)
 <details>
 <summary> 접기/펼치기 </summary>
 
@@ -78,7 +78,7 @@ https://drive.google.com/file/d/1c3oUIk6y5szbaey2DMie-__O0hhCHht-/view?usp=share
     - 
 </details>
 
-## 23-01-29 (일)
+### 23-01-29 (일)
 <details>
 <summary> 접기/펼치기 </summary>
 
@@ -99,7 +99,7 @@ https://drive.google.com/file/d/1c3oUIk6y5szbaey2DMie-__O0hhCHht-/view?usp=share
     - <include>를 data binding시에 값이 안들어감 -> 값을 전역번수로 생성해 넣음 
 </details>
 
-## 23-01-30 (월)
+### 23-01-30 (월)
 
 <details>
 <summary> 접기/펼치기 </summary>
@@ -122,7 +122,7 @@ https://drive.google.com/file/d/1c3oUIk6y5szbaey2DMie-__O0hhCHht-/view?usp=share
         -> color 폴더에서 생성후 사용
 </details>
 
-## 23-01-31 (화)
+### 23-01-31 (화)
 
 <details>
 <summary> 접기/펼치기 </summary>
@@ -154,7 +154,7 @@ https://drive.google.com/file/d/1c3oUIk6y5szbaey2DMie-__O0hhCHht-/view?usp=share
 
 </details>
 
-## 23-02-01 (수)
+### 23-02-01 (수)
 
 <details>
 <summary> 접기/펼치기 </summary>
@@ -181,7 +181,7 @@ https://drive.google.com/file/d/1c3oUIk6y5szbaey2DMie-__O0hhCHht-/view?usp=share
 
 
 
-## 23-02-02 (목)
+### 23-02-02 (목)
 
 <details>
 <summary> 접기/펼치기 </summary>
@@ -211,7 +211,7 @@ https://drive.google.com/file/d/1c3oUIk6y5szbaey2DMie-__O0hhCHht-/view?usp=share
 </details>
 
 
-## 23-02-03 (금)
+### 23-02-03 (금)
 
 <details>
 <summary> 접기/펼치기 </summary>
@@ -234,7 +234,7 @@ https://drive.google.com/file/d/1c3oUIk6y5szbaey2DMie-__O0hhCHht-/view?usp=share
 </details>
 
 
-## 23-02-04 (토)
+### 23-02-04 (토)
 
 <details>
 <summary> 접기/펼치기 </summary>
@@ -255,7 +255,7 @@ https://drive.google.com/file/d/1c3oUIk6y5szbaey2DMie-__O0hhCHht-/view?usp=share
 </details>
 
 
-## 23-02-05 (일)
+### 23-02-05 (일)
 
 <details>
 <summary> 접기/펼치기 </summary>
@@ -281,7 +281,7 @@ https://drive.google.com/file/d/1c3oUIk6y5szbaey2DMie-__O0hhCHht-/view?usp=share
 
 
 
-## 23-02-06 (월)
+### 23-02-06 (월)
 
 <details>
 <summary> 접기/펼치기 </summary>
@@ -308,7 +308,7 @@ https://drive.google.com/file/d/1c3oUIk6y5szbaey2DMie-__O0hhCHht-/view?usp=share
 
 </details>
 
-## 23-02-07 (화)
+### 23-02-07 (화)
 
 
 <details>
@@ -330,7 +330,7 @@ https://drive.google.com/file/d/1c3oUIk6y5szbaey2DMie-__O0hhCHht-/view?usp=share
 
 </details>
 
-## 23-02-07 (수)
+### 23-02-07 (수)
 
 <details>
 <summary> 접기/펼치기 </summary>
@@ -354,7 +354,7 @@ https://drive.google.com/file/d/1c3oUIk6y5szbaey2DMie-__O0hhCHht-/view?usp=share
 
 </details>
 
-## 23-02-07 (목)
+### 23-02-07 (목)
 
 <details>
 <summary> 접기/펼치기 </summary>
@@ -377,7 +377,7 @@ https://drive.google.com/file/d/1c3oUIk6y5szbaey2DMie-__O0hhCHht-/view?usp=share
 
 </details>
 
-## 23-02-08 (금)
+### 23-02-08 (금)
 
 
 <details>
