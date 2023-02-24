@@ -4,19 +4,20 @@ import com.gram15inch.domain.model.store.detail.Store
 import com.gram15inch.domain.model.store.StoreDetail
 import com.gram15inch.domain.model.store.home.HomeCategory
 import com.gram15inch.data.converter.StoreConverter
-import com.gram15inch.data.remote.StoreApiService
+import com.gram15inch.data.datasource.remote.StoreRemoteDataSource
+import com.gram15inch.data.datasource.remote.apiservice.StoreApiService
 import com.gram15inch.domain.model.store.pick.PickStoreRequest
 import com.gram15inch.domain.repository.StoreRepository
 import javax.inject.Inject
 
 
-class StoreRepositoryImpl @Inject constructor (private val storeApiService: StoreApiService):
+class StoreRepositoryImpl @Inject constructor (private val storeRemoteDataSource: StoreRemoteDataSource):
     StoreRepository {
 
     override suspend fun getPickStore(request: PickStoreRequest): List<Store> {
 
-        storeApiService.getChooseStore(request.latitude,request.latitude).body().also {
-            return if (it?.isSuccess == true)
+        storeRemoteDataSource.getChooseStoreResponse(request.latitude,request.latitude).also {
+            return if (it.isSuccess)
                 it.result?.map { remote -> StoreConverter.toStore(remote) }?: emptyList()
             else
                 emptyList()
@@ -24,8 +25,8 @@ class StoreRepositoryImpl @Inject constructor (private val storeApiService: Stor
 
     }
     override suspend fun getHomeCategory(): List<HomeCategory> {
-        storeApiService.getHomeCategory().body().also {
-            return if (it?.isSuccess == true)
+        storeRemoteDataSource.getHomeCategoryResponse().also {
+            return if (it.isSuccess)
                 it.result.map { remote -> StoreConverter.toHomeCategory(remote) }
             else
                 emptyList()
@@ -33,12 +34,11 @@ class StoreRepositoryImpl @Inject constructor (private val storeApiService: Stor
     }
 
     override suspend fun getStoreDetail(id:Int): StoreDetail?{
-        storeApiService.getStoreDetail(id).body().also {
-            if (it?.isSuccess == true)
+        storeRemoteDataSource.getStoreDetailResponse(id).also {
+            if (it.isSuccess)
                 if (it.result != null)
                     return StoreConverter.toStoreDetail(it.result)
         }
-
         return null
     }
 

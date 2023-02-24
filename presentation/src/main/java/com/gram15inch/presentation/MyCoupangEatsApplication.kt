@@ -31,17 +31,8 @@ class MyCoupangEatsApplication:Application() {
 
         lateinit var sSharedPreferences: SharedPreferences
         lateinit var prefs: PreferenceUtil
-
         // JWT Token Header 키 값
         val X_ACCESS_TOKEN = "X-ACCESS-TOKEN"
-
-        val BASE_URL_GIIN = "http://risingsh.site:9000/" // 기인/오세한
-        val BASE_URL_HAPPY = "http://dev.happypage.shop:9001/" // 해피/최민규
-        val BASE_URL ="https://prod.happypage.shop/coupang-eats/"
-
-
-
-
     }
 
     override fun onCreate() {

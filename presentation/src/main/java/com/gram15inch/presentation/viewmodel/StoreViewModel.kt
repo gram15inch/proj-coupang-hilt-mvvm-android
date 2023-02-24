@@ -30,14 +30,14 @@ class StoreViewModel @Inject constructor(
 
 
     fun refreshCart() {
-        viewModelScope.launch {
+        viewModelScope.launch(exceptionHandler) {
             _cartMenusFlow.emit(cartRepository.cartMenus.toList())// ????????????????????
             Timber.tag("currentCart").d("${_cartMenusFlow.value.map { it.menu }}")
         }
     }
 
     fun refreshStore(storeId:Int) {
-        viewModelScope.launch() {
+        viewModelScope.launch(exceptionHandler) {
             storeRepository.getStoreDetail(storeId)
                 .apply {
                     if(this!=null)
@@ -47,7 +47,7 @@ class StoreViewModel @Inject constructor(
     }
 
     fun startScroll() {
-        bannerJob = viewModelScope.launch {
+        bannerJob = viewModelScope.launch(exceptionHandler) {
             while (true) {
                 delay(1000)
                 bannerPos.emit(bannerPos.value + 1)
@@ -74,7 +74,7 @@ class StoreViewModel @Inject constructor(
         ) {
             super.onPageScrolled(position, positionOffset, positionOffsetPixels)
             if (positionOffsetPixels == 0) {
-                viewModelScope.launch {
+                viewModelScope.launch(exceptionHandler) {
                     bannerPos.emit(position)
                 }
             }

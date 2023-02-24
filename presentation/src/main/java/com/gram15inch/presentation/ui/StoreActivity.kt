@@ -122,7 +122,7 @@ class StoreActivity :
             val intent = Intent(this, MenuActivity::class.java)
             Timber.tag("moveMenu")
                 .d("store put->: menu: ${it.id}  store: ${viewModel.storeFlow.value?.id}")
-            intent.putExtra("menuId", it.id)
+            intent.putExtra( "menuId", it.id)
             intent.putExtra("storeId", viewModel.storeFlow.value?.id)
             startActivity(intent)
 

@@ -32,7 +32,7 @@ class MenuViewModel @Inject constructor(
     }
 
     fun menuRefresh(storeId: Int, menuId: Int) {
-        viewModelScope.launch {
+        viewModelScope.launch(exceptionHandler) {
             menuRepository.getMenu(storeId, menuId).apply {
                 if(this!=null) {
                     menuFlow.emit(this)
@@ -43,7 +43,7 @@ class MenuViewModel @Inject constructor(
     }
 
     fun calculate() {
-        viewModelScope.launch {
+        viewModelScope.launch(exceptionHandler) {
             menuFlow.value.also { menuDetail ->
                 if (menuDetail != null)
                     calculateCartMenuPrice(
@@ -58,7 +58,7 @@ class MenuViewModel @Inject constructor(
     }
 
     fun countUp() {
-        viewModelScope.launch {
+        viewModelScope.launch(exceptionHandler) {
             if (menuCount.value <= 100) {
                 menuCount.emit(menuCount.value + 1)
                 calculate()
@@ -67,7 +67,7 @@ class MenuViewModel @Inject constructor(
     }
 
     fun countDown() {
-        viewModelScope.launch {
+        viewModelScope.launch(exceptionHandler) {
             if (menuCount.value > 1) {
                 menuCount.emit(menuCount.value - 1)
                 calculate()
@@ -76,7 +76,7 @@ class MenuViewModel @Inject constructor(
     }
 
     fun addMenu() {
-        viewModelScope.launch {
+        viewModelScope.launch(exceptionHandler) {
             menuFlow.value.also { menu ->
                 if (menu != null)
                     cartRepository.cartMenus.add(

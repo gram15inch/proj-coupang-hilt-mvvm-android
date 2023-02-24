@@ -76,7 +76,7 @@ class CartViewModel @Inject constructor(
 
     fun addOrder() {
 
-        viewModelScope.launch {
+        viewModelScope.launch(exceptionHandler) {
             MyCoupangEatsApplication.prefs.setString(
                 X_ACCESS_TOKEN,
                 "eyJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJ1c2VySWR4IjoxLCJpYXQiOjE2NzU1ODI0NjYsImV4cCI6MTY3NzA1MzY5NX0.SgGJotjuT18Y-OxNAdSkHpSu1TSAIfW0Oerobh2Seco"
@@ -95,10 +95,8 @@ class CartViewModel @Inject constructor(
                     _totalPrice.value
                 )
             ).also {
-                viewModelScope.launch {
-                    if (it!=null)
-                        _cartOrderAdd.emit(listOf(it))
-                }
+                if (it!=null)
+                    _cartOrderAdd.emit(listOf(it))
             }
         }
 
@@ -121,7 +119,7 @@ class CartViewModel @Inject constructor(
             X_ACCESS_TOKEN,
             "eyJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJ1c2VySWR4IjoxLCJpYXQiOjE2NzU1MjE0MDgsImV4cCI6MTY3Njk5MjYzN30.cDKAWGYLhki019hj3bKISJ9Lw5unlCzwqqLbnMGp9gs"
         )
-        viewModelScope.launch {
+        viewModelScope.launch(exceptionHandler) {
             addressRepository.getAddress().also {
                 _cartAddr.emit(it)
             }
@@ -136,7 +134,7 @@ class CartViewModel @Inject constructor(
     }
 
     fun refreshStore() {
-        viewModelScope.launch() {
+        viewModelScope.launch(exceptionHandler) {
             _cartStore.emit(cartRepository.cartStore)
             val minfee = _cartStore.value.firstOrNull()?.minFee?:0
             _totalPrice.emit(_totalPrice.value + minfee)
@@ -153,7 +151,7 @@ class CartViewModel @Inject constructor(
         return cartRepository.devrMsgs
     }
     fun setDevrMsgs(msg:String){
-        viewModelScope.launch {
+        viewModelScope.launch(exceptionHandler) {
              _cartDevrMsg.emit(msg)
         }
     }

@@ -54,9 +54,9 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun sortCategory() {
+    private fun sortCategory() {
         val sortHomeCategory = mutableListOf<HomeCategory>()
-        viewModelScope.launch {
+        viewModelScope.launch(exceptionHandler) {
             _homeCategoryFlow.collect() {
                 it.filter { (it.name == "포장") || (it.name == "1인분") }.also {
                     sortHomeCategory.addAll(it)
@@ -72,7 +72,7 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun setBanner() {
-        viewModelScope.launch() {
+        viewModelScope.launch(exceptionHandler) {
             bannerPos.collect() { pos ->
                 _eventFlow.value.also { list ->
                     if (list.isNotEmpty()) {
@@ -84,13 +84,13 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun refreshHomeCategory() {
-        viewModelScope.launch {
+        viewModelScope.launch(exceptionHandler) {
             storeRepository.getHomeCategory().apply {
                 _homeCategoryFlow.emit(this)
             }
         }
 
-        viewModelScope.launch {
+        viewModelScope.launch(exceptionHandler) {
             _homeCategoryFlow.collect() {
                 //  Timber.tag("homeViewModel").d("list : $it")
             }
@@ -99,7 +99,7 @@ class HomeViewModel @Inject constructor(
 
 
     fun refreshEvent() {
-        viewModelScope.launch {
+        viewModelScope.launch(exceptionHandler) {
             eventRepository.getEvent().apply {
                 _eventFlow.emit(this)
             }
@@ -108,7 +108,7 @@ class HomeViewModel @Inject constructor(
 
 
     fun refreshPickStore() {
-        viewModelScope.launch {
+        viewModelScope.launch(exceptionHandler) {
             storeRepository.getPickStore(
                 PickStoreRequest(
                     "37.3888359886166200",
@@ -121,9 +121,8 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-
     fun startScroll() {
-        bannerJob = viewModelScope.launch {
+        bannerJob = viewModelScope.launch(exceptionHandler) {
             while (true) {
                 delay(3000)
                 bannerPos.emit(bannerPos.value++)
@@ -144,7 +143,7 @@ class HomeViewModel @Inject constructor(
         ) {
             super.onPageScrolled(position, positionOffset, positionOffsetPixels)
             if (positionOffsetPixels == 0) {
-                viewModelScope.launch {
+                viewModelScope.launch(exceptionHandler) {
                     bannerPos.emit(position)
                 }
             }

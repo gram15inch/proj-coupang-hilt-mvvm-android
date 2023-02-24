@@ -1,6 +1,6 @@
 package com.gram15inch.data.converter
 
-import com.gram15inch.data.remote.model.address.RemoteAddress
+import com.gram15inch.data.datasource.remote.model.address.RemoteAddress
 import com.gram15inch.domain.model.address.Address
 
 object AddressConverter {

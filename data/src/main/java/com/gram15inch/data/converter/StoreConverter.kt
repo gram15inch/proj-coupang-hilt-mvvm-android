@@ -1,11 +1,11 @@
 package com.gram15inch.data.converter
 
-import com.gram15inch.data.remote.model.store.category.RemoteHomeCategory
+import com.gram15inch.data.datasource.remote.model.store.category.RemoteHomeCategory
 import com.gram15inch.data.remote.model.store.detail.Category
 import com.gram15inch.data.remote.model.store.detail.Menu
 import com.gram15inch.data.remote.model.store.detail.RemoteStoreDetail
 import com.gram15inch.data.remote.model.store.pick.RemotePickStore
-import com.gram15inch.domain.model.store.*
+import com.gram15inch.domain.model.store.StoreDetail
 import com.gram15inch.domain.model.store.detail.DomainCategory
 import com.gram15inch.domain.model.store.detail.Store
 import com.gram15inch.domain.model.store.detail.StoreCategory

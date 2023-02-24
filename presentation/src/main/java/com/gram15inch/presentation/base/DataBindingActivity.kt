@@ -7,7 +7,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import com.clone.mycoupang.domain.policy.AllErrorState
+import com.gram15inch.domain.policy.AllErrorState
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.flow.StateFlow
 

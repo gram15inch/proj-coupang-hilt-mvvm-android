@@ -1,11 +1,10 @@
 package com.gram15inch.presentation.base
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import com.clone.mycoupang.domain.policy.AllErrorState
+import com.gram15inch.domain.policy.AllErrorState
+import com.gram15inch.domain.policy.ResponseException
 import kotlinx.coroutines.CoroutineExceptionHandler
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
@@ -35,6 +34,9 @@ abstract class ErrorHandleViewModel : ViewModel() {
                 is UnknownHostException -> {
                     Timber.tag("error").d("exceptionHandler.UnknownHostException: ${throwable.message}")
                     _state.emit(AllErrorState.UNKNOWN_HOST)
+                }
+                is ResponseException->{
+                    _state.emit(AllErrorState.RESPONSE)
                 }
                 else -> {
                     Timber.tag("error").d("exceptionHandler.elseException: ${throwable.message}")

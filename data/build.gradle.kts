@@ -59,7 +59,6 @@ dependencies {
 
 
 
-
     // retrofit for networking
     implementation (Libraries.RETROFIT)
     implementation (Libraries.RETROFIT_KOTLIN_COROUTINES_ADAPTER)
@@ -73,14 +72,14 @@ dependencies {
     implementation (Libraries.MOSHI_ADAPTERS)
     kapt(Libraries.MOSHI_CODEGEN)
 
-
-
     implementation (Libraries.OKHTTP)
-
     implementation (Libraries.OKHTTP_LOGGING_INTERCEPTOR)
 
     //coroutine
     testImplementation (Kotlin.COROUTINES_TEST)
+
+
+
 
     // Timber : Log util
     implementation(Libraries.TIMBER)

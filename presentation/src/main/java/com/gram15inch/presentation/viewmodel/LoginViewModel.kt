@@ -30,7 +30,7 @@ class LoginViewModel @Inject constructor(private val userRepository: UserReposit
     }
 
     fun clear() {
-        viewModelScope.launch {
+        viewModelScope.launch(exceptionHandler) {
             _flowEmail.emit("")
             _flowPassword.emit("")
         }
@@ -70,13 +70,13 @@ class LoginViewModel @Inject constructor(private val userRepository: UserReposit
     }
 
     fun setEmail(em: String) {
-        viewModelScope.launch {
+        viewModelScope.launch(exceptionHandler) {
             _flowEmail.emit(em)
         }
     }
 
     fun setPassword(pw: String) {
-        viewModelScope.launch {
+        viewModelScope.launch(exceptionHandler) {
             _flowPassword.emit(pw)
         }
     }

@@ -27,7 +27,7 @@ class SignUpViewModel @Inject constructor(private val userRepository: UserReposi
 
     fun signUp() {
        // testUserInput()
-        viewModelScope.launch {
+        viewModelScope.launch(exceptionHandler) {
             val request= SignUpRequest(
                 terms.value,
                 email.value,

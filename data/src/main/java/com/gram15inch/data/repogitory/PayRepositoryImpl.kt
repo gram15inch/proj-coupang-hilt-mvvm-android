@@ -2,17 +2,18 @@ package com.gram15inch.data.repogitory
 
 import com.gram15inch.domain.model.pay.Pay
 import com.gram15inch.data.converter.PayConverter
-import com.gram15inch.data.remote.PayApiService
+import com.gram15inch.data.datasource.remote.PayRemoteDataSource
+import com.gram15inch.data.datasource.remote.apiservice.PayApiService
 import com.gram15inch.domain.repository.PayRepository
 import javax.inject.Inject
 
 
-class PayRepositoryImpl @Inject constructor (private val payApiService: PayApiService)
+class PayRepositoryImpl @Inject constructor (private val payRemoteDataSource: PayRemoteDataSource)
     : PayRepository {
     override suspend fun getPayments(): List<Pay> {
 
-        payApiService.getPayments().body().also {
-            return if (it?.isSuccess == true)
+        payRemoteDataSource.getPaymentsResponse().also {
+            return if (it.isSuccess)
                 PayConverter.toPay(it.result)
             else
                 emptyList()

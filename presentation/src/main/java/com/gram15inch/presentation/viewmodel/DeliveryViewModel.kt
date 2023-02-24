@@ -25,7 +25,7 @@ class DeliveryViewModel @Inject constructor(private val orderRepository: OrderRe
     }
 
     private fun setHistoryMenu() {
-        viewModelScope.launch {
+        viewModelScope.launch(exceptionHandler) {
             _history.collect() {
                 if (it.isNotEmpty())
                     _historyMenu.emit(it.first().menuList)
@@ -34,7 +34,7 @@ class DeliveryViewModel @Inject constructor(private val orderRepository: OrderRe
     }
 
     fun refreshHistory(orderId:Int) {
-        viewModelScope.launch {// todo userId pref 에서 받아와야함
+        viewModelScope.launch(exceptionHandler) {// todo userId pref 에서 받아와야함
             orderRepository.getHistory(1).apply {
                 this.filter {
                     it.id == orderId

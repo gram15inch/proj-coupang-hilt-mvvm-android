@@ -1,6 +1,6 @@
 package com.gram15inch.data.converter
 
-import com.gram15inch.data.remote.model.pay.RemotePay
+import com.gram15inch.data.datasource.remote.model.pay.RemotePay
 import com.gram15inch.domain.model.pay.Pay
 
 
