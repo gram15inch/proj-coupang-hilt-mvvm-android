@@ -23,23 +23,18 @@ abstract class ErrorHandleViewModel : ViewModel() {
         viewModelScope.launch {
             when (throwable) {
                 is SocketException -> {
-                    Timber.tag("error").d("exceptionHandler.SocketException: ${throwable.message}")
                     _state.emit(AllErrorState.SOCKET)
                 }
                 is HttpException -> {
-                    Timber.tag("error").d("exceptionHandler.HttpException: ${throwable.message}")
                     _state.emit(AllErrorState.HTTP)
-
                 }
                 is UnknownHostException -> {
-                    Timber.tag("error").d("exceptionHandler.UnknownHostException: ${throwable.message}")
                     _state.emit(AllErrorState.UNKNOWN_HOST)
                 }
                 is ResponseException->{
                     _state.emit(AllErrorState.RESPONSE)
                 }
                 else -> {
-                    Timber.tag("error").d("exceptionHandler.elseException: ${throwable.message}")
                     _state.emit(AllErrorState.FAIL)
                 }
             }
